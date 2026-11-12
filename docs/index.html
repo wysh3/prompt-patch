@@ -8,203 +8,267 @@
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Newsreader:ital,opsz,wght@1,6..72,400..500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --surface: #f8f5f0;
-    --primary: #6f5a4e;
-    --primary-rgb: 111, 90, 78;
-    --secondary: rgba(111, 90, 78, 0.72);
-    --heading: #3a2618;
-    --divider: rgba(111, 90, 78, 0.12);
-    --soft: rgba(111, 90, 78, 0.06);
-    --line: 0.35;
+    --surface: #faf6f2;
+    --primary: #73574a;
+    --secondary: #73574abf;
+    --heading: #432818;
+    --divider: #73574a14;
+    --pill-bg: #ffffff;
+    --pill-shadow: 0 3px 7px -3px #43281824, 0 0 0 .75px #00000008;
+    --frame: #ffffff;
+    --hover-blur: 2.7px;
+    --line-alpha: 25%;
+    --line-alpha-hover: 60%;
     --sans: "Inter", system-ui, -apple-system, sans-serif;
-    --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+    --spring: cubic-bezier(.34, 1.3, .64, 1);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --surface: #1b1816;
-      --primary: #9c938b;
-      --primary-rgb: 156, 147, 139;
-      --secondary: rgba(156, 147, 139, 0.72);
-      --heading: #f6ead9;
-      --divider: rgba(232, 226, 216, 0.09);
-      --soft: rgba(232, 226, 216, 0.04);
-      --line: 0.45;
+      --surface: #1c1917; --primary: #9a918a; --secondary: #9a918abf; --heading: #fef1df;
+      --divider: #e8e4da14; --pill-bg: #1d1917;
+      --pill-shadow: 0 3px 7px -3px #fef1df1f, 0 0 0 .75px #fef1df1f;
+      --frame: #ece6dc; --line-alpha: 45%; --line-alpha-hover: 75%;
     }
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) figure img { filter: invert(0.9) hue-rotate(180deg) contrast(0.95); }
-  }
-  :root[data-theme="dark"] figure img { filter: invert(0.9) hue-rotate(180deg) contrast(0.95); }
   :root[data-theme="dark"] {
-    --surface: #1b1816; --primary: #9c938b; --primary-rgb: 156, 147, 139;
-    --secondary: rgba(156, 147, 139, 0.72); --heading: #f6ead9;
-    --divider: rgba(232, 226, 216, 0.09); --soft: rgba(232, 226, 216, 0.04); --line: 0.45;
+    --surface: #1c1917; --primary: #9a918a; --secondary: #9a918abf; --heading: #fef1df;
+    --divider: #e8e4da14; --pill-bg: #1d1917;
+    --pill-shadow: 0 3px 7px -3px #fef1df1f, 0 0 0 .75px #fef1df1f;
+    --frame: #ece6dc; --line-alpha: 45%; --line-alpha-hover: 75%;
   }
 
   * { box-sizing: border-box; }
-  html { background: var(--surface); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-         -webkit-text-size-adjust: 100%; }
+  html { background: var(--surface); -webkit-font-smoothing: antialiased; font-synthesis: none;
+         text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body { margin: 0; background: var(--surface); color: var(--primary);
-         font: 450 14px/1.57 var(--sans); letter-spacing: -0.02em;
-         font-feature-settings: "calt", "ss08", "cv11"; }
-  ::selection { background: rgba(var(--primary-rgb), 0.22); color: var(--heading); }
+         font-family: var(--sans); font-weight: 450; font-size: 16px; line-height: 1.5;
+         font-feature-settings: "calt" 1, "ss08" 1, "cv11" 1; }
+  ::selection { background: color-mix(in srgb, var(--primary) 22%, transparent); color: var(--heading); }
 
-  .page { max-width: 510px; margin: 0 auto; padding: 72px 20px 96px; }
+  .page { max-width: 550px; margin: 0 auto; padding: 88px 20px 120px; }
 
-  header.top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 72px; }
-  .name { font: italic 400 22px/1 var(--serif); letter-spacing: 0; color: var(--heading); text-decoration: none; }
-  .top nav { font-size: 12px; letter-spacing: -0.01em; color: var(--secondary); }
-  .top nav a { color: var(--secondary); text-decoration: none; margin-left: 14px; transition: color .15s; }
-  .top nav a:hover { color: var(--heading); }
+  /* ---------- entrance: fade in from blur, staggered ---------- */
+  @keyframes fade-in-blur { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
+  .js .stagger { opacity: 0; }
+  .js .stagger.in { animation: .35s var(--spring) both fade-in-blur;
+                    animation-delay: calc(.15s + var(--i, 0) * 65ms); }
+  .js .stagger.done { animation: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .stagger { opacity: 1; } .js .stagger.in { animation: none; }
+    html { scroll-behavior: auto; }
+  }
 
-  h1 { font: italic 400 34px/1.1 var(--serif); letter-spacing: -0.01em; color: var(--heading);
-       margin: 0 0 8px; text-wrap: balance; }
-  .date { font-size: 12px; color: var(--secondary); letter-spacing: -0.01em; margin: 0 0 40px; }
+  /* ---------- header ---------- */
+  .top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .name { font: italic 500 28px/1 var(--display); font-variation-settings: "opsz" 72;
+          color: var(--heading); text-decoration: none; letter-spacing: -0.01em; }
+  .meta { font-size: 12px; line-height: 15px; letter-spacing: -0.02em; color: var(--secondary); }
+  .meta a { color: var(--secondary); text-decoration: none; transition: color .2s ease-out; }
+  .meta a:hover { color: var(--heading); }
+  .meta .dot { margin: 0 6px; opacity: .6; }
 
-  h2 { font: italic 400 22px/1.2 var(--serif); letter-spacing: 0; color: var(--heading);
-       margin: 56px 0 14px; scroll-margin-top: 24px; }
-  p { margin: 0 0 20px; }
-  strong { color: var(--heading); font-weight: 550; }
-  em { font-style: italic; }
-  a { color: var(--heading); text-decoration: underline dotted;
-      text-decoration-color: rgba(var(--primary-rgb), var(--line));
-      text-decoration-thickness: 1.5px; text-underline-offset: 3px; transition: text-decoration-color .15s; }
-  a:hover { text-decoration-color: rgba(var(--primary-rgb), 0.8); }
+  .intro { font-size: 14px; line-height: 1.57; letter-spacing: -0.02em; margin: 0 0 44px; }
 
-  ul { margin: 0 0 20px; padding-left: 18px; }
-  li { margin-bottom: 8px; padding-left: 2px; }
-  li::marker { color: var(--secondary); }
+  /* ---------- list section (contents) ---------- */
+  h2.label { font: italic 500 20px/24px var(--display); font-variation-settings: "opsz" 40;
+             color: var(--heading); margin: 0 0 6px; }
+  .list { list-style: none; margin: 0 0 8px; padding: 0; }
+  .row { position: relative; display: flex; align-items: center; gap: 20px; padding: 12px 0;
+         text-decoration: none; color: var(--primary); font-size: 14px; letter-spacing: -0.02em;
+         -webkit-tap-highlight-color: transparent; }
+  .row::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1.25px;
+                border-radius: 9999px; background: linear-gradient(to right, var(--divider), transparent);
+                transition: opacity .35s ease-out; }
+  .thumb { flex: none; width: 46px; height: 32px; display: grid; place-items: center;
+           border-radius: 2px; background: var(--frame); box-shadow: var(--pill-shadow), inset 0 0 0 3px var(--frame), inset 0 0 0 3.75px #43281812;
+           font: italic 500 15px/1 var(--display); color: #432818;
+           transform: rotate(var(--rot, 0deg));
+           transition: transform .35s cubic-bezier(.34, 1.4, .64, 1), scale .25s; }
+  .row .t { flex: 1; min-width: 0; color: var(--primary); transition: color .2s ease-out; }
+  .row .d { flex: none; font-size: 12px; line-height: 15px; color: var(--secondary); }
+  .row:active .thumb { scale: .94; }
 
-  code { font: 12px/1.4 var(--mono); letter-spacing: 0; background: var(--soft);
-         border: 1px solid var(--divider); padding: 1px 5px; border-radius: 4px; color: var(--heading); }
+  /* hover: focus the row under the cursor, blur and dim everything else in the list area */
+  .listzone :is(.row, h2.label), .intro, .top { transition: filter .25s ease-out, opacity .25s ease-out; }
+  @media (hover: hover) {
+    .listzone:has(.row:hover) .row:not(:hover),
+    .listzone:has(.row:hover) h2.label,
+    body:has(.listzone .row:hover) :is(.intro, .top) { filter: blur(var(--hover-blur)); opacity: .4; }
+    .listzone:has(.row:hover) .row::after { opacity: .3; }
+    .row:hover .t { color: var(--heading); }
+    .row:hover .thumb { transform: rotate(calc(var(--rot, 0deg) + 1.5deg)) scale(1.06); }
+  }
 
-  /* contents: list rows */
-  .contents { margin: 8px 0 8px; }
-  .contents h2 { margin-top: 0; }
-  .rows { list-style: none; padding: 0; margin: 0; }
-  .rows li { margin: 0; padding: 0; border-bottom: 1px solid var(--divider); }
-  .rows a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-            padding: 11px 0; color: var(--primary); text-decoration: none; transition: color .15s; }
-  .rows a:hover { color: var(--heading); }
-  .rows span { font-size: 12px; color: var(--secondary); font-variant-numeric: tabular-nums; }
+  /* ---------- article ---------- */
+  .article { margin-top: 64px; }
+  h1 { font: italic 500 32px/1.12 var(--display); font-variation-settings: "opsz" 72;
+       letter-spacing: -0.015em; color: var(--heading); margin: 0 0 8px; text-wrap: balance; }
+  .date { font: italic 400 14px/1.2 var(--display); color: var(--secondary); margin: 0 0 36px; }
 
-  figure { margin: 36px -20px; }
-  figure img { display: block; width: 100%; height: auto; border-radius: 10px;
-               box-shadow: 0 0 0 1px var(--divider); }
-  figcaption, .cap { font-size: 12px; line-height: 1.55; letter-spacing: -0.01em; color: var(--secondary); }
-  figcaption { margin: 12px 20px 0; }
+  .body { font-size: 14px; line-height: 1.57; letter-spacing: -0.02em; font-variant-ligatures: none; }
+  .body p { margin: 0 0 24px; text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-wrap: pretty; }
+  .body h2 { font-size: 15px; font-weight: 550; line-height: 1.2; letter-spacing: -0.02em;
+             color: var(--heading); margin: 48px 0 16px; text-wrap: balance; scroll-margin-top: 32px; }
+  .body strong { font-weight: 550; color: var(--heading); }
+  .body em { font-style: italic; }
+  .body ul { margin: 0 0 24px; padding-left: 18px; }
+  .body li { margin: 0 0 10px; padding-left: 4px; text-wrap: pretty; }
+  .body li::marker { color: var(--secondary); }
+  .body code { background: var(--divider); border-radius: 4px; padding: 2px 6px;
+               font: .9em/1.4 var(--mono); letter-spacing: 0; }
+
+  /* dotted-end underline, as a gradient so it can fade */
+  @property --link-line { syntax: "<color>"; inherits: false; initial-value: #0000; }
+  .body a[href], .meta-links a[href] {
+    --link-line: color-mix(in srgb, var(--primary) var(--line-alpha), transparent);
+    color: var(--primary); text-decoration: none; padding-bottom: 1px;
+    background:
+      radial-gradient(circle 1px at 100% 50%, var(--link-line) 99%, transparent) 0 100% / 1px 2px no-repeat,
+      radial-gradient(circle 1px at 0% 50%, var(--link-line) 99%, transparent) 100% 100% / 1px 2px no-repeat,
+      linear-gradient(var(--link-line), var(--link-line)) 50% 100% / calc(100% - 2px) 2px no-repeat;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    transition: --link-line .3s ease-out, color .2s ease-out; }
+  .body a[href]:hover { --link-line: color-mix(in srgb, var(--primary) var(--line-alpha-hover), transparent);
+                        color: var(--heading); }
+
+  /* figures as small prints */
+  figure { margin: 36px 0; }
+  .print { display: block; padding: 6px; border-radius: 4px; background: var(--frame);
+           box-shadow: var(--pill-shadow); transform: rotate(var(--rot, 0deg));
+           transition: transform .35s cubic-bezier(.34, 1.4, .64, 1); }
+  .print img { display: block; width: 100%; height: auto; border-radius: 2px; }
+  @media (hover: hover) { figure:hover .print { transform: rotate(0deg) scale(1.015); } }
+  figcaption, .cap { font-size: 12px; line-height: 1.55; letter-spacing: -0.02em; color: var(--secondary); }
+  figcaption { margin-top: 14px; }
+  figcaption strong, .cap strong { color: var(--primary); font-weight: 550; }
   .cap { margin: 10px 0 28px; }
 
-  .tablewrap { overflow-x: auto; margin: 28px 0 0; }
-  table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
-  th, td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--divider); vertical-align: top; }
+  .tablewrap { overflow-x: auto; margin: 28px 0 0; -webkit-overflow-scrolling: touch; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; letter-spacing: -0.02em;
+          font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 10px 14px 10px 0; vertical-align: top; position: relative; }
+  tr { background: linear-gradient(to right, var(--divider), transparent) 0 100% / 100% 1.25px no-repeat; }
   th { font-weight: 450; font-size: 12px; color: var(--secondary); }
+  td:first-child { white-space: nowrap; }
   td.n, th.n { text-align: right; white-space: nowrap; }
   td:last-child, th:last-child { padding-right: 0; }
-  td:first-child { white-space: nowrap; }
   tr.hi td { color: var(--heading); font-weight: 550; }
 
-  footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--divider);
-           font-size: 12px; color: var(--secondary); letter-spacing: -0.01em; }
-  footer a { color: var(--secondary); }
+  /* round pill: back to top */
+  .pill { position: fixed; right: 24px; bottom: 24px; width: 36px; height: 36px; border-radius: 200px;
+          display: grid; place-items: center; background: var(--pill-bg); box-shadow: var(--pill-shadow);
+          color: var(--heading); text-decoration: none;
+          opacity: 0; filter: blur(4px); scale: .9; pointer-events: none;
+          transition: opacity .3s ease-out, filter .3s ease-out, scale .35s var(--spring); }
+  .pill.show { opacity: 1; filter: blur(0); scale: 1; pointer-events: auto; }
+  .pill:active { scale: .92; }
 
-  @media (max-width: 560px) {
-    .page { padding-top: 40px; }
-    header.top { margin-bottom: 48px; }
-    h1 { font-size: 30px; }
-    figure { margin: 32px 0; }
-    figcaption { margin: 12px 0 0; }
+  footer { margin-top: 72px; padding-top: 18px; position: relative;
+           font-size: 12px; line-height: 1.5; letter-spacing: -0.02em; color: var(--secondary); }
+  footer::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 1.25px;
+                   background: linear-gradient(to right, var(--divider), transparent); border-radius: 9999px; }
+
+  @media (max-width: 600px) {
+    .page { padding-top: 48px; }
+    .name { font-size: 26px; }
+    h1 { font-size: 28px; }
+    .body p { text-align: left; }
+    .pill { right: 16px; bottom: 16px; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-<header class="top">
+<header class="top stagger">
   <a class="name" href="./">Vishruth M R</a>
-  <nav><a href="paper.pdf">Paper</a><a href="https://github.com/wysh3/prompt-patch">GitHub</a></nav>
+  <span class="meta"><a href="paper.pdf">Paper</a><span class="dot">·</span><a href="https://github.com/wysh3/prompt-patch">GitHub</a></span>
 </header>
 
-<main>
-<h1>Where do you write a prompt into a 4-bit model?</h1>
-<p class="date">November 2026</p>
+<p class="intro stagger">Notes from one experiment: writing a system prompt into a shipped 4-bit model file as a small, removable patch, with no training. It runs on a laptop, and every number below can be checked against a result file.</p>
 
-<p>A system prompt changes how a model behaves. Suppose you want that change to live inside the model file itself: no prompt, no adapter, no extra file to ship. And suppose the file is already quantised to 4 bits, so all you can change are stored integer codes. Where in the file should the edit go, and how small can it be?</p>
+<nav class="listzone" aria-label="Contents">
+  <h2 class="label stagger">contents</h2>
+  <ul class="list">
+    <li class="stagger"><a class="row" href="#setup"><span class="thumb" style="--rot:-1.5deg">1</span><span class="t">The setup</span><span class="d">model and task</span></a></li>
+    <li class="stagger"><a class="row" href="#two-jobs"><span class="thumb" style="--rot:1deg">2</span><span class="t">A prompt does two jobs</span><span class="d">evidence, decision</span></a></li>
+    <li class="stagger"><a class="row" href="#mlp"><span class="thumb" style="--rot:-.5deg">3</span><span class="t">Editing the MLP weights</span><span class="d">9.8%</span></a></li>
+    <li class="stagger"><a class="row" href="#why"><span class="thumb" style="--rot:1.5deg">4</span><span class="t">Why that place fails</span><span class="d">the norm gain</span></a></li>
+    <li class="stagger"><a class="row" href="#rows"><span class="thumb" style="--rot:-1deg">5</span><span class="t">A few output rows</span><span class="d">48.6%</span></a></li>
+    <li class="stagger"><a class="row" href="#switch"><span class="thumb" style="--rot:.5deg">6</span><span class="t">Adding an on-switch</span><span class="d">53.6%</span></a></li>
+    <li class="stagger"><a class="row" href="#limits"><span class="thumb" style="--rot:-1.5deg">7</span><span class="t">What this does not show</span><span class="d">limits</span></a></li>
+    <li class="stagger"><a class="row" href="#failed"><span class="thumb" style="--rot:1deg">8</span><span class="t">What failed</span><span class="d">three tries</span></a></li>
+    <li class="stagger"><a class="row" href="#repro"><span class="thumb" style="--rot:-.5deg">9</span><span class="t">Reproducibility</span><span class="d">code, results</span></a></li>
+  </ul>
+</nav>
 
-<p>I tried this on LiquidAI's LFM3-Omni-2B on a 16&nbsp;GB laptop, with no training. The short version: the place most weight-editing methods target does not work in this model, for a reason I can point to. A much smaller edit somewhere else does work, within limits that I list below.</p>
+<main class="article">
+<h1 class="stagger">Where do you write a prompt into a 4-bit model?</h1>
+<p class="date stagger">November 2026</p>
 
-<section class="contents">
-<h2>Contents</h2>
-<ul class="rows">
-  <li><a href="#setup">The setup <span>01</span></a></li>
-  <li><a href="#two-jobs">A prompt does two jobs <span>02</span></a></li>
-  <li><a href="#mlp">Editing the MLP weights moves the evidence only <span>03</span></a></li>
-  <li><a href="#why">Why that place fails <span>04</span></a></li>
-  <li><a href="#rows">A few output rows install the decision <span>05</span></a></li>
-  <li><a href="#switch">Adding an on-switch <span>06</span></a></li>
-  <li><a href="#limits">What this does not show <span>07</span></a></li>
-  <li><a href="#failed">What failed <span>08</span></a></li>
-  <li><a href="#repro">Reproducibility <span>09</span></a></li>
-</ul>
-</section>
+<div class="body">
+<p class="stagger">A system prompt changes how a model behaves. Suppose you want that change to live inside the model file itself: no prompt, no adapter, no extra file to ship. And suppose the file is already quantised to 4 bits, so all you can change are stored integer codes. Where in the file should the edit go, and how small can it be?</p>
 
-<h2 id="setup">The setup</h2>
-<p>The model is the 4-bit MLX build of LFM3-Omni-2B. The task is AG News: classify a news item as world, sports, business or tech.</p>
-<ul>
+<p class="stagger">I tried this on LiquidAI's LFM3-Omni-2B on a 16&nbsp;GB laptop, with no training. The short version: the place most weight-editing methods target does not work in this model, for a reason I can point to. A much smaller edit somewhere else does work, within limits that I list below.</p>
+
+<h2 id="setup" class="stagger">The setup</h2>
+<p class="stagger">The model is the 4-bit MLX build of LFM3-Omni-2B. The task is AG News: classify a news item as world, sports, business or tech.</p>
+<ul class="stagger">
   <li>The <strong>teacher</strong> is the model with a system prompt that tells it to answer with one of the four labels.</li>
   <li>The <strong>student</strong> is the same model with the prompt removed. It never answers with a label word.</li>
 </ul>
-<p>A patch is a set of changes to stored codes. The goal is a patched student that behaves like the teacher. Every patch is fitted in closed form (least squares on the model's own forward passes) and can be removed by restoring the values it changed.</p>
+<p class="stagger">A patch is a set of changes to stored codes. The goal is a patched student that behaves like the teacher. Every patch is fitted in closed form (least squares on the model's own forward passes) and can be removed by restoring the values it changed.</p>
 
-<h2 id="two-jobs">A prompt does two jobs</h2>
-<p>The idea that organises everything else is that the prompt supplies two separate things, and they can be measured separately.</p>
-<ul>
+<h2 id="two-jobs" class="stagger">A prompt does two jobs</h2>
+<p class="stagger">The idea that organises everything else is that the prompt supplies two separate things, and they can be measured separately.</p>
+<ul class="stagger">
   <li><strong>Evidence.</strong> Inside the network, the right class becomes more likely than the others. I measure this with <em>label-restricted accuracy</em>: look only at the four label tokens at the first position and take the highest.</li>
   <li><strong>The decision.</strong> The model actually answers with a label word. I measure this with <em>says-correct</em>: the first generated token is the correct label. This is what a user sees.</li>
 </ul>
-<p>The unprompted student scores 23.9% label-restricted, which is chance, and 0.0% says-correct.</p>
+<p class="stagger">The unprompted student scores 23.9% label-restricted, which is chance, and 0.0% says-correct.</p>
 
-<h2 id="mlp">Editing the MLP weights moves the evidence only</h2>
-<p>Most weight-editing methods change the output matrix of the MLP blocks. I did that directly in the stored codes: about 8 million codes across five layers, each moved up or down by one step.</p>
-<p>Label-restricted accuracy went from 24.4% to 50.8%, close to the teacher's 55.0% on the same items. Says-correct reached only 9.8%. The model now holds the evidence and still does not answer in the label format.</p>
-<p>The natural suspicion is that one-step integer changes are too coarse. They are not the problem. An unconstrained floating-point edit of the same five matrices got 59.2% label-restricted and 9.0% says-correct.</p>
+<h2 id="mlp" class="stagger">Editing the MLP weights moves the evidence only</h2>
+<p class="stagger">Most weight-editing methods change the output matrix of the MLP blocks. I did that directly in the stored codes: about 8 million codes across five layers, each moved up or down by one step.</p>
+<p class="stagger">Label-restricted accuracy went from 24.4% to 50.8%, close to the teacher's 55.0% on the same items. Says-correct reached only 9.8%. The model now holds the evidence and still does not answer in the label format.</p>
+<p class="stagger">The natural suspicion is that one-step integer changes are too coarse. They are not the problem. An unconstrained floating-point edit of the same five matrices got 59.2% label-restricted and 9.0% says-correct.</p>
 
-<figure>
-  <img src="fig_task_vs_format.png" alt="Scatter plot of label-restricted accuracy against says-correct accuracy for each method" width="870" height="735">
+<figure class="stagger">
+  <div class="print" style="--rot:-.6deg"><img src="fig_task_vs_format.png" alt="Scatter plot of label-restricted accuracy against says-correct accuracy for each method" width="870" height="735" loading="lazy"></div>
   <figcaption><strong>Figure 1.</strong> Evidence (horizontal) against decision (vertical). The two MLP edits sit far to the right and near the bottom: they move the evidence and leave the decision almost untouched. The output-row patches sit near the diagonal, next to the teacher. The points are measured on different evaluation slices, listed in Table 1 of the paper.</figcaption>
 </figure>
 
-<h2 id="why">Why that place fails</h2>
-<p>In this architecture a normalisation layer sits directly after each MLP. It does two things to any edit made upstream of it.</p>
-<ul>
+<h2 id="why" class="stagger">Why that place fails</h2>
+<p class="stagger">In this architecture a normalisation layer sits directly after each MLP. It does two things to any edit made upstream of it.</p>
+<ul class="stagger">
   <li>Its learned gain is small. The RMS of the gain is 0.033 at layer 8 and rises to 0.231 at layer 24, so an edit is scaled down before it reaches the rest of the network.</li>
   <li>Its normaliser is recomputed from the edited output. A large edit raises the normaliser, which cancels part of the edit.</li>
 </ul>
-<p>The fitted change consequently has to be between 2.5 and 92 times the size of the weights themselves, and the linear prediction of how much of the gap it closes is too optimistic at every layer.</p>
+<p class="stagger">The fitted change consequently has to be between 2.5 and 92 times the size of the weights themselves, and the linear prediction of how much of the gap it closes is too optimistic at every layer.</p>
 
-<figure>
-  <img src="fig_flip_layers.png" alt="Two panels: residual gap left unexplained per layer, and size of the fitted change relative to the weights with the gain per layer" width="1080" height="518">
+<figure class="stagger">
+  <div class="print" style="--rot:.5deg"><img src="fig_flip_layers.png" alt="Two panels: residual gap left unexplained per layer, and size of the fitted change relative to the weights with the gain per layer" width="1080" height="518" loading="lazy"></div>
   <figcaption><strong>Figure 2.</strong> Left: the share of the teacher–student gap that each edit leaves unexplained on held-out prompts, per layer. Right: bars show how large the fitted change is relative to the weights (92 times at layer 16); the line shows the gain of the normalisation layer, which stays below 0.11 until the last layer.</figcaption>
 </figure>
 
-<h2 id="rows">A few output rows install the decision</h2>
-<p>The decision is made at the output, so that is where I edited next. In this model the output layer shares its weights with the input embedding table: one row per token. I fitted a ridge regression from the model's final hidden state to the gap between teacher and student logits, and wrote the result into existing rows, re-quantised to their 6 bits.</p>
-<ul>
+<h2 id="rows" class="stagger">A few output rows install the decision</h2>
+<p class="stagger">The decision is made at the output, so that is where I edited next. In this model the output layer shares its weights with the input embedding table: one row per token. I fitted a ridge regression from the model's final hidden state to the gap between teacher and student logits, and wrote the result into existing rows, re-quantised to their 6 bits.</p>
+<ul class="stagger">
   <li>Four rows (the four label tokens): 30.6% says-correct.</li>
   <li>104 rows, fitted on 1,000 prompts: 48.6% says-correct.</li>
 </ul>
-<p>The 104-row patch touches 0.0123% of the model's stored codes.</p>
+<p class="stagger">The 104-row patch touches 0.0123% of the model's stored codes.</p>
 
-<h2 id="switch">Adding an on-switch</h2>
-<p>A patch that is always on changes the model for every input. To make it switchable I used a token id that the tokenizer reserves and ordinary text never produces. Its embedding row is unused. Appending that token to the input turns the patch on.</p>
-<p>The switchable patch is five rows. The reserved-token row carries the push toward answering with a label. The four label rows carry the class information, and their change is restricted to directions in which ordinary prompts vary least, so it has little effect when the token is absent.</p>
-<p>I chose the configuration on separate data, wrote it to a file, and ran it once on 1,000 held-out items.</p>
+<h2 id="switch" class="stagger">Adding an on-switch</h2>
+<p class="stagger">A patch that is always on changes the model for every input. To make it switchable I used a token id that the tokenizer reserves and ordinary text never produces. Its embedding row is unused. Appending that token to the input turns the patch on.</p>
+<p class="stagger">The switchable patch is five rows. The reserved-token row carries the push toward answering with a label. The four label rows carry the class information, and their change is restricted to directions in which ordinary prompts vary least, so it has little effect when the token is absent.</p>
+<p class="stagger">I chose the configuration on separate data, wrote it to a file, and ran it once on 1,000 held-out items.</p>
 
-<div class="tablewrap">
+<div class="tablewrap stagger">
 <table>
   <thead><tr><th>Edit</th><th class="n">Says-correct</th><th class="n">Label-restricted</th><th class="n">Size</th></tr></thead>
   <tbody>
@@ -217,12 +281,12 @@
   </tbody>
 </table>
 </div>
-<p class="cap"><strong>Table 1.</strong> Accuracy in percent. The held-out run has a 95% interval of 50.4 to 56.7. Rows are measured on different slices; the paper gives the slice and interval for each.</p>
+<p class="cap stagger"><strong>Table 1.</strong> Accuracy in percent. The held-out run has a 95% interval of 50.4 to 56.7. Rows are measured on different slices; the paper gives the slice and interval for each.</p>
 
-<p>With the token present, the patched model reaches 53.6% against the teacher's 56.3%. With the token absent, 99.3% of first tokens are identical to the unpatched model, and 99.41% on 505 unrelated prompts.</p>
+<p class="stagger">With the token present, the patched model reaches 53.6% against the teacher's 56.3%. With the token absent, 99.3% of first tokens are identical to the unpatched model, and 99.41% on 505 unrelated prompts.</p>
 
-<h2 id="limits">What this does not show</h2>
-<ul>
+<h2 id="limits" class="stagger">What this does not show</h2>
+<ul class="stagger">
   <li><strong>The teacher is a weak classifier.</strong> It gets 56.3% on AG News. Matching it is not solving the task.</li>
   <li><strong>The patch is not invisible when off.</strong> On unrelated prompts, 12% of 12-token continuations differ somewhere after the first token. The label rows are shared between input and output, so they are still read.</li>
   <li><strong>One model family.</strong> On a second model, LFM3-1.7B, four rows reproduce the teacher's first token 90.3% of the time. But that teacher is at chance on the task (26.0%), so the second model confirms only the answer-format step.</li>
@@ -231,25 +295,71 @@
   <li><strong>The switch is a backdoor in form.</strong> A single edited embedding row used as a trigger was studied as an attack by <a href="https://arxiv.org/abs/2103.15543">Yang et al. (2021)</a>. What differs here is the closed-form fit, the quantised file, and exact removal.</li>
 </ul>
 
-<h2 id="failed">What failed</h2>
-<p>Several things I tried did not work, and they are in the paper and the repository.</p>
-<ul>
+<h2 id="failed" class="stagger">What failed</h2>
+<p class="stagger">Several things I tried did not work, and they are in the paper and the repository.</p>
+<ul class="stagger">
   <li><strong>Editing the normalisation gains themselves</strong> moved label-restricted accuracy by 1.8 points and says-correct not at all.</li>
   <li><strong>Forcing the patch to be exactly invisible on ordinary prompts</strong>, by projecting it away from everything they span, removed its effect.</li>
   <li><strong>Moving a circuit between models.</strong> I tried to copy induction heads from Pythia-160M into Pythia-70M using linear maps fitted on forward passes. With the smaller model's own circuit removed, its induction score went from 0.85 to 1.13 nats, against 6.96 when intact. The copied heads attended to the right position up to 42% of the time (66% for the model's own heads), but their output did not help.</li>
 </ul>
 
-<h2 id="repro">Reproducibility</h2>
-<p>The <a href="https://github.com/wysh3/prompt-patch">repository</a> has the code, the result file behind every number, and the 8-page <a href="paper.pdf">paper</a>.</p>
-<ul>
+<h2 id="repro" class="stagger">Reproducibility</h2>
+<p class="stagger">The <a href="https://github.com/wysh3/prompt-patch">repository</a> has the code, the result file behind every number, and the 8-page <a href="paper.pdf">paper</a>.</p>
+<ul class="stagger">
   <li><code>results/</code> holds one JSON file per experiment, and <code>results/numbers_map.csv</code> maps each number printed in the paper to a field in those files. <code>python check_numbers.py</code> checks all 307 without needing the model.</li>
   <li><code>experiments/</code> holds the scripts, and <code>reproduce.sh</code> reruns the main ones from the model in about 2 hours 20 minutes on a 16&nbsp;GB Apple-silicon Mac.</li>
   <li><code>results/FROZEN_CONFIG.json</code> is the configuration that was fixed before the held-out run.</li>
 </ul>
-<p>The experiments were run, and the first drafts written, with AI coding agents working under my direction. I am responsible for the claims; the checks above exist so that nobody has to take them on trust.</p>
+<p class="stagger">The experiments were run, and the first drafts written, with AI coding agents working under my direction. I am responsible for the claims; the checks above exist so that nobody has to take them on trust.</p>
+</div>
 </main>
 
-<footer>© 2026 Vishruth M R · Code under the MIT licence · The model is released by LiquidAI under the LFM Open License v1.0</footer>
+<footer class="stagger">© 2026 Vishruth M R · Code under the MIT licence · The model is released by LiquidAI under the LFM Open License v1.0</footer>
 </div>
+
+<a class="pill" href="#" aria-label="Back to top">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 8.5 7 5l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
+    var items = Array.prototype.slice.call(document.querySelectorAll(".stagger"));
+    var reveal = function (el, i) { el.style.setProperty("--i", i); el.classList.add("in"); };
+    var vh = window.innerHeight;
+    var first = 0;
+    items.forEach(function (el) {
+      if (el.getBoundingClientRect().top < vh) { reveal(el, first++); }
+    });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        var n = 0;
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !e.target.classList.contains("in")) {
+            e.target.style.setProperty("--i", n++);
+            e.target.style.animationDelay = "calc(" + (n - 1) + " * 65ms)";
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -6% 0px" });
+      items.forEach(function (el) { if (!el.classList.contains("in")) io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add("in"); });
+    }
+    document.addEventListener("animationend", function (e) {
+      if (e.animationName === "fade-in-blur" && e.target.classList.contains("stagger")) e.target.classList.add("done");
+    });
+    // safety net: never leave text hidden if animations are paused or throttled
+    setTimeout(function () {
+      items.forEach(function (el) { if (el.classList.contains("in")) el.classList.add("done"); });
+    }, 2500);
+    var pill = document.querySelector(".pill");
+    var onScroll = function () { pill.classList.toggle("show", window.scrollY > 600); };
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    pill.addEventListener("click", function (e) { e.preventDefault(); window.scrollTo({ top: 0 }); history.replaceState(null, "", " "); });
+  })();
+</script>
 </body>
 </html>
