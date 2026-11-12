@@ -1,0 +1,370 @@
+{
+ "layers": [
+  8,
+  12,
+  16,
+  20,
+  24
+ ],
+ "max_flips_per_row": 800,
+ "prompt_tokens": 51,
+ "n_train_queries": 300,
+ "n_eval": 500,
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   55.0,
+   50.6,
+   59.4
+  ],
+  "label_restricted_acc": [
+   55.0,
+   50.6,
+   59.4
+  ]
+ },
+ "student_no_prompt_stock": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   24.4,
+   20.8,
+   28.2
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 20.294
+ },
+ "fit": [
+  {
+   "layer": 8,
+   "bits": 4,
+   "flips": 1608382,
+   "pct_of_matrix": 10.226,
+   "sweeps_used": 800,
+   "holdout_unexplained_true": 0.4671,
+   "dense_float_edit_linear": {
+    "0.01": 0.173,
+    "0.1": 0.1382,
+    "1.0": 0.1459
+   },
+   "path": [
+    {
+     "sweeps": 10,
+     "flips": 20293,
+     "holdout_unexplained_linear": 0.8948
+    },
+    {
+     "sweeps": 25,
+     "flips": 50559,
+     "holdout_unexplained_linear": 0.8285
+    },
+    {
+     "sweeps": 50,
+     "flips": 100974,
+     "holdout_unexplained_linear": 0.7644
+    },
+    {
+     "sweeps": 100,
+     "flips": 201700,
+     "holdout_unexplained_linear": 0.6884
+    },
+    {
+     "sweeps": 200,
+     "flips": 402966,
+     "holdout_unexplained_linear": 0.6034
+    },
+    {
+     "sweeps": 400,
+     "flips": 804949,
+     "holdout_unexplained_linear": 0.518
+    },
+    {
+     "sweeps": 800,
+     "flips": 1608382,
+     "holdout_unexplained_linear": 0.4381
+    }
+   ],
+   "seconds_stats": 18,
+   "seconds_solve": 71
+  },
+  {
+   "layer": 12,
+   "bits": 6,
+   "flips": 1615376,
+   "pct_of_matrix": 10.27,
+   "sweeps_used": 800,
+   "holdout_unexplained_true": 0.7863,
+   "dense_float_edit_linear": {
+    "0.01": 0.2379,
+    "0.1": 0.1886,
+    "1.0": 0.191
+   },
+   "path": [
+    {
+     "sweeps": 10,
+     "flips": 20335,
+     "holdout_unexplained_linear": 0.9783
+    },
+    {
+     "sweeps": 25,
+     "flips": 50675,
+     "holdout_unexplained_linear": 0.9659
+    },
+    {
+     "sweeps": 50,
+     "flips": 101155,
+     "holdout_unexplained_linear": 0.951
+    },
+    {
+     "sweeps": 100,
+     "flips": 202214,
+     "holdout_unexplained_linear": 0.9282
+    },
+    {
+     "sweeps": 200,
+     "flips": 404105,
+     "holdout_unexplained_linear": 0.8937
+    },
+    {
+     "sweeps": 400,
+     "flips": 807706,
+     "holdout_unexplained_linear": 0.844
+    },
+    {
+     "sweeps": 800,
+     "flips": 1615376,
+     "holdout_unexplained_linear": 0.7779
+    }
+   ],
+   "seconds_stats": 28,
+   "seconds_solve": 66
+  },
+  {
+   "layer": 16,
+   "bits": 4,
+   "flips": 1609094,
+   "pct_of_matrix": 10.23,
+   "sweeps_used": 800,
+   "holdout_unexplained_true": 0.6613,
+   "dense_float_edit_linear": {
+    "0.01": 0.2848,
+    "0.1": 0.2236,
+    "1.0": 0.2182
+   },
+   "path": [
+    {
+     "sweeps": 10,
+     "flips": 20307,
+     "holdout_unexplained_linear": 0.9434
+    },
+    {
+     "sweeps": 25,
+     "flips": 50520,
+     "holdout_unexplained_linear": 0.9106
+    },
+    {
+     "sweeps": 50,
+     "flips": 100921,
+     "holdout_unexplained_linear": 0.8763
+    },
+    {
+     "sweeps": 100,
+     "flips": 201646,
+     "holdout_unexplained_linear": 0.8311
+    },
+    {
+     "sweeps": 200,
+     "flips": 402816,
+     "holdout_unexplained_linear": 0.7734
+    },
+    {
+     "sweeps": 400,
+     "flips": 805025,
+     "holdout_unexplained_linear": 0.7049
+    },
+    {
+     "sweeps": 800,
+     "flips": 1609094,
+     "holdout_unexplained_linear": 0.6342
+    }
+   ],
+   "seconds_stats": 33,
+   "seconds_solve": 69
+  },
+  {
+   "layer": 20,
+   "bits": 4,
+   "flips": 1614205,
+   "pct_of_matrix": 10.263,
+   "sweeps_used": 800,
+   "holdout_unexplained_true": 0.8045,
+   "dense_float_edit_linear": {
+    "0.01": 0.7001,
+    "0.1": 0.5491,
+    "1.0": 0.5029
+   },
+   "path": [
+    {
+     "sweeps": 10,
+     "flips": 20244,
+     "holdout_unexplained_linear": 0.9683
+    },
+    {
+     "sweeps": 25,
+     "flips": 50509,
+     "holdout_unexplained_linear": 0.9496
+    },
+    {
+     "sweeps": 50,
+     "flips": 100881,
+     "holdout_unexplained_linear": 0.9298
+    },
+    {
+     "sweeps": 100,
+     "flips": 201667,
+     "holdout_unexplained_linear": 0.9038
+    },
+    {
+     "sweeps": 200,
+     "flips": 403365,
+     "holdout_unexplained_linear": 0.8707
+    },
+    {
+     "sweeps": 400,
+     "flips": 807103,
+     "holdout_unexplained_linear": 0.833
+    },
+    {
+     "sweeps": 800,
+     "flips": 1614205,
+     "holdout_unexplained_linear": 0.793
+    }
+   ],
+   "seconds_stats": 40,
+   "seconds_solve": 73
+  },
+  {
+   "layer": 24,
+   "bits": 6,
+   "flips": 1622202,
+   "pct_of_matrix": 10.314,
+   "sweeps_used": 800,
+   "holdout_unexplained_true": 0.865,
+   "dense_float_edit_linear": {
+    "0.01": 0.6083,
+    "0.1": 0.5079,
+    "1.0": 0.5217
+   },
+   "path": [
+    {
+     "sweeps": 10,
+     "flips": 20393,
+     "holdout_unexplained_linear": 0.9723
+    },
+    {
+     "sweeps": 25,
+     "flips": 50903,
+     "holdout_unexplained_linear": 0.9596
+    },
+    {
+     "sweeps": 50,
+     "flips": 101781,
+     "holdout_unexplained_linear": 0.9463
+    },
+    {
+     "sweeps": 100,
+     "flips": 203372,
+     "holdout_unexplained_linear": 0.9292
+    },
+    {
+     "sweeps": 200,
+     "flips": 406094,
+     "holdout_unexplained_linear": 0.9073
+    },
+    {
+     "sweeps": 400,
+     "flips": 811457,
+     "holdout_unexplained_linear": 0.88
+    },
+    {
+     "sweeps": 800,
+     "flips": 1622202,
+     "holdout_unexplained_linear": 0.8475
+    }
+   ],
+   "seconds_stats": 47,
+   "seconds_solve": 319
+  }
+ ],
+ "student_no_prompt_FLIPPED": {
+  "says_correct_label": [
+   9.8,
+   7.4,
+   12.4
+  ],
+  "label_restricted_acc": [
+   50.8,
+   46.4,
+   55.2
+  ],
+  "same_first_token_as_teacher": [
+   11.0,
+   8.4,
+   13.8
+  ],
+  "mean_KL_from_teacher_nats": 4.81
+ },
+ "student_no_prompt_FLIPPED_stock_runtime": {
+  "says_correct_label": [
+   10.0,
+   6.5,
+   15.0
+  ],
+  "label_restricted_acc": [
+   49.0,
+   42.5,
+   56.0
+  ],
+  "free_argmax_agreement_with_manual_pct": 99.5,
+  "label_argmax_agreement_with_manual_pct": 100.0
+ },
+ "collateral_identical_generations_pct": 26.7,
+ "stock_runtime_agrees": true,
+ "patch": {
+  "flips": 8069259,
+  "pct_of_edited_matrices": 10.261,
+  "lm_weight_scalars": 1728413696,
+  "pct_of_language_model_weights": 0.4669,
+  "bytes_raw": 33285695,
+  "bytes_zlib": 12623594,
+  "file": "patches/flippatch_L8-12-16-20-24_it800_n300.npz"
+ },
+ "control_random_flips": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   20.0,
+   14.5,
+   25.5
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 20.774
+ },
+ "uninstall": {
+  "sha256_identical_to_original": true,
+  "first_tokens_identical": true
+ }
+}

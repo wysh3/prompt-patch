@@ -1,0 +1,200 @@
+{
+ "A": {
+  "text_loss": 4.2823,
+  "induction_score": 16.491,
+  "first_copy_loss": 21.817,
+  "second_copy_loss": 5.326
+ },
+ "B_before": {
+  "text_loss": 6.4389,
+  "induction_score": 0.038,
+  "first_copy_loss": 12.587,
+  "second_copy_loss": 12.549
+ },
+ "A_circuit": {
+  "prev_token": [
+   [
+    3,
+    2,
+    0.843
+   ],
+   [
+    3,
+    0,
+    0.489
+   ]
+  ],
+  "induction": [
+   [
+    4,
+    6,
+    0.942
+   ],
+   [
+    8,
+    2,
+    0.888
+   ]
+  ]
+ },
+ "B_before_roles": {
+  "max_prev": 0.435,
+  "max_induction": 0.022
+ },
+ "plan": [
+  [
+   3,
+   0,
+   1,
+   4
+  ],
+  [
+   3,
+   2,
+   1,
+   0
+  ],
+  [
+   4,
+   6,
+   2,
+   2
+  ],
+  [
+   8,
+   2,
+   4,
+   0
+  ]
+ ],
+ "transplant_S": {
+  "scores": {
+   "text_loss": 6.4431,
+   "induction_score": 0.024,
+   "first_copy_loss": 12.662,
+   "second_copy_loss": 12.638
+  },
+  "fits": [
+   {
+    "A": [
+     3,
+     0
+    ],
+    "B": [
+     1,
+     4
+    ],
+    "out_mode": "S",
+    "qkv_fit_r2": 0.311,
+    "S_fit_r2": 0.4214
+   },
+   {
+    "A": [
+     3,
+     2
+    ],
+    "B": [
+     1,
+     0
+    ],
+    "out_mode": "S",
+    "qkv_fit_r2": 0.3449,
+    "S_fit_r2": 0.423
+   },
+   {
+    "A": [
+     4,
+     6
+    ],
+    "B": [
+     2,
+     2
+    ],
+    "out_mode": "logit",
+    "qkv_fit_r2": 0.4797,
+    "logit_map_r2": -1.1027,
+    "norm_ratio": 0.1121
+   },
+   {
+    "A": [
+     8,
+     2
+    ],
+    "B": [
+     4,
+     0
+    ],
+    "out_mode": "logit",
+    "qkv_fit_r2": 0.2616,
+    "logit_map_r2": -1.1027,
+    "norm_ratio": 0.1121
+   }
+  ],
+  "max_induction_attn": 0.034
+ },
+ "transplant_channel": {
+  "scores": {
+   "text_loss": 6.5093,
+   "induction_score": 0.039,
+   "first_copy_loss": 12.521,
+   "second_copy_loss": 12.481
+  },
+  "fits": [
+   {
+    "A": [
+     3,
+     0
+    ],
+    "B": [
+     1,
+     4
+    ],
+    "out_mode": "channel",
+    "qkv_fit_r2": 0.311,
+    "channel_sv_ratio": 0.4067
+   },
+   {
+    "A": [
+     3,
+     2
+    ],
+    "B": [
+     1,
+     0
+    ],
+    "out_mode": "channel",
+    "qkv_fit_r2": 0.3449,
+    "channel_sv_ratio": 0.4548
+   },
+   {
+    "A": [
+     4,
+     6
+    ],
+    "B": [
+     2,
+     2
+    ],
+    "out_mode": "logit",
+    "qkv_fit_r2": 0.5152,
+    "logit_map_r2": -1.1027,
+    "norm_ratio": 0.1121
+   },
+   {
+    "A": [
+     8,
+     2
+    ],
+    "B": [
+     4,
+     0
+    ],
+    "out_mode": "logit",
+    "qkv_fit_r2": 0.2621,
+    "logit_map_r2": -1.1027,
+    "norm_ratio": 0.1121
+   }
+  ],
+  "max_induction_attn": 0.205
+ }
+}

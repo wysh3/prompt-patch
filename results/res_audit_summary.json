@@ -1,0 +1,19 @@
+{
+ "flip_total": 8069259,
+ "flip_pct_of_matrix_codes_mean": 10.261,
+ "flip_max_row_share_max": 0.0004955290472039602,
+ "flip_top1pct_rows_share_max": 0.009895659115807066,
+ "flip_col397_share_max": 0.0003840458833116961,
+ "flip_sign_pos_share_mean": 0.5017,
+ "flip_rows_touched_min": 2048,
+ "summary_row_summary_rank": 1,
+ "summary_row_summary_cos": 0.99198,
+ "summary_row_world_rank": 9454,
+ "summary_row_sports_rank": 77313,
+ "summary_row_business_rank": 55831,
+ "summary_row_tech_rank": 7144,
+ "flip_rank_world": 124669,
+ "flip_rank_sports": 123672,
+ "flip_rank_business": 92334,
+ "flip_rank_tech": 7315
+}

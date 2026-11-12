@@ -1,0 +1,530 @@
+{
+ "method": "gradient soft token (one row, id 125110)",
+ "target_token": 32173,
+ "target_token_text": "Summary",
+ "trigger_id": 125110,
+ "hidden": 2048,
+ "embedding_bits": 6,
+ "embedding_group_size": 64,
+ "train": {
+  "articles": "po_x[0:200]",
+  "n": 200,
+  "heldout": "po_x[200:300]",
+  "plain": "po_x[1000:1100]",
+  "steps": 300,
+  "batch": 4,
+  "lr": 0.03,
+  "optimizer": "mlx.optimizers.Adam",
+  "loss": "CE(student first-token || teacher first-token), placeholders 125100-125163 masked",
+  "teacher_prompt": "Always answer in one sentence that starts with 'Summary:' followed by a single sentence.",
+  "init": [
+   "zero",
+   "closed-form (scale 10)"
+  ]
+ },
+ "teacher": {
+  "argmax_is_target_pct_over_train": 97.0,
+  "argmax_is_target_pct_over_heldout": 98.0,
+  "mean_entropy_nats": 0.0876,
+  "mean_entropy_heldout": 0.0979
+ },
+ "stock": {
+  "triggered_first_token_is_target_pct": 0.0,
+  "plain_first_token_identical_pct": 100.0
+ },
+ "results": {
+  "train_zero_init": {
+   "name": "train_zero_init",
+   "triggered_first_token_is_target_pct": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "same_first_token_as_teacher_pct": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "greedy3_starts_with_Summary_pct_of_40": 0.0,
+   "mean_KL_from_teacher_nats": 10.4163,
+   "plain_first_token_identical_pct": [
+    100.0,
+    100.0,
+    100.0
+   ],
+   "plain_logits_bit_identical_5of5": true,
+   "triggered_float_injection_pct": 0.0,
+   "first_token_top5_2_heldout": [
+    [
+     [
+      48414,
+      "\u4e86\u627f"
+     ],
+     [
+      112227,
+      " pozyc"
+     ],
+     [
+      67348,
+      "Shadows"
+     ],
+     [
+      123307,
+      " respectivo"
+     ],
+     [
+      93992,
+      " carboxy"
+     ]
+    ],
+    [
+     [
+      48414,
+      "\u4e86\u627f"
+     ],
+     [
+      123307,
+      " respectivo"
+     ],
+     [
+      93992,
+      " carboxy"
+     ],
+     [
+      112227,
+      " pozyc"
+     ],
+     [
+      67348,
+      "Shadows"
+     ]
+    ]
+   ],
+   "patch": {
+    "rows": 1,
+    "changed_packed_words": 384,
+    "total_packed_words": 384,
+    "changed_scales": 32,
+    "changed_biases": 32,
+    "changed_dequantized_values": 2048,
+    "saved_bytes": 1664,
+    "row_bytes": 1664
+   },
+   "vector": {
+    "norm": 43.41,
+    "rms": 0.9592,
+    "cos_with_u": 0.0419,
+    "cos_with_closed_form": 0.0419,
+    "installed_norm": 43.407,
+    "installed_relative_error": 0.0122,
+    "installed_cos_with_closed_form": 0.0425
+   },
+   "eval_seconds": 21,
+   "mean_KL_float_injection_nats": 10.4842
+  },
+  "train_cf_init": {
+   "name": "train_cf_init",
+   "triggered_first_token_is_target_pct": [
+    98.0,
+    95.0,
+    100.0
+   ],
+   "same_first_token_as_teacher_pct": [
+    96.0,
+    92.0,
+    99.0
+   ],
+   "greedy3_starts_with_Summary_pct_of_40": 97.5,
+   "mean_KL_from_teacher_nats": 0.2237,
+   "plain_first_token_identical_pct": [
+    100.0,
+    100.0,
+    100.0
+   ],
+   "plain_logits_bit_identical_5of5": true,
+   "triggered_float_injection_pct": 98.0,
+   "first_token_top5_2_heldout": [
+    [
+     [
+      32173,
+      "Summary"
+     ],
+     [
+      41,
+      "A"
+     ],
+     [
+      12,
+      "$"
+     ],
+     [
+      59,
+      "S"
+     ],
+     [
+      29738,
+      "Michael"
+     ]
+    ],
+    [
+     [
+      32173,
+      "Summary"
+     ],
+     [
+      40345,
+      "European"
+     ],
+     [
+      27540,
+      "Europe"
+     ],
+     [
+      29738,
+      "Michael"
+     ],
+     [
+      59,
+      "S"
+     ]
+    ]
+   ],
+   "patch": {
+    "rows": 1,
+    "changed_packed_words": 384,
+    "total_packed_words": 384,
+    "changed_scales": 32,
+    "changed_biases": 32,
+    "changed_dequantized_values": 2048,
+    "saved_bytes": 1664,
+    "row_bytes": 1664
+   },
+   "vector": {
+    "norm": 48.593,
+    "rms": 1.0738,
+    "cos_with_u": 0.2569,
+    "cos_with_closed_form": 0.2569,
+    "installed_norm": 48.552,
+    "installed_relative_error": 0.0215,
+    "installed_cos_with_closed_form": 0.2564
+   },
+   "eval_seconds": 21,
+   "mean_KL_float_injection_nats": 0.2236
+  },
+  "closed_form_scale10": {
+   "name": "closed_form_scale10",
+   "triggered_first_token_is_target_pct": [
+    100.0,
+    100.0,
+    100.0
+   ],
+   "same_first_token_as_teacher_pct": [
+    98.0,
+    95.0,
+    100.0
+   ],
+   "greedy3_starts_with_Summary_pct_of_40": 100.0,
+   "mean_KL_from_teacher_nats": 1.0002,
+   "plain_first_token_identical_pct": [
+    100.0,
+    100.0,
+    100.0
+   ],
+   "plain_logits_bit_identical_5of5": true,
+   "triggered_float_injection_pct": null,
+   "first_token_top5_2_heldout": [
+    [
+     [
+      32173,
+      "Summary"
+     ],
+     [
+      13999,
+      " summary"
+     ],
+     [
+      32818,
+      " Summary"
+     ],
+     [
+      7319,
+      "summary"
+     ],
+     [
+      92497,
+      "\u603b\u7ed3"
+     ]
+    ],
+    [
+     [
+      32173,
+      "Summary"
+     ],
+     [
+      13999,
+      " summary"
+     ],
+     [
+      32818,
+      " Summary"
+     ],
+     [
+      7319,
+      "summary"
+     ],
+     [
+      92497,
+      "\u603b\u7ed3"
+     ]
+    ]
+   ],
+   "patch": {
+    "rows": 1,
+    "changed_packed_words": 384,
+    "total_packed_words": 384,
+    "changed_scales": 32,
+    "changed_biases": 32,
+    "changed_dequantized_values": 2048,
+    "saved_bytes": 1664,
+    "row_bytes": 1664
+   },
+   "vector": {
+    "norm": 8.331,
+    "rms": 0.1841,
+    "cos_with_u": 1.0,
+    "cos_with_closed_form": 1.0,
+    "installed_norm": 8.329,
+    "installed_relative_error": 0.021,
+    "installed_cos_with_closed_form": 0.9998
+   },
+   "eval_seconds": 21
+  },
+  "random_row_scale10": {
+   "name": "random_row_scale10",
+   "triggered_first_token_is_target_pct": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "same_first_token_as_teacher_pct": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "greedy3_starts_with_Summary_pct_of_40": 0.0,
+   "mean_KL_from_teacher_nats": 13.2288,
+   "plain_first_token_identical_pct": [
+    100.0,
+    100.0,
+    100.0
+   ],
+   "plain_logits_bit_identical_5of5": true,
+   "triggered_float_injection_pct": null,
+   "first_token_top5_2_heldout": [
+    [
+     [
+      51,
+      "K"
+     ],
+     [
+      267,
+      " a"
+     ],
+     [
+      73,
+      "a"
+     ],
+     [
+      7643,
+      " killed"
+     ],
+     [
+      41,
+      "A"
+     ]
+    ],
+    [
+     [
+      40345,
+      "European"
+     ],
+     [
+      23756,
+      "Global"
+     ],
+     [
+      20535,
+      "global"
+     ],
+     [
+      18689,
+      " shares"
+     ],
+     [
+      4964,
+      " European"
+     ]
+    ]
+   ],
+   "patch": {
+    "rows": 1,
+    "changed_packed_words": 384,
+    "total_packed_words": 384,
+    "changed_scales": 32,
+    "changed_biases": 32,
+    "changed_dequantized_values": 2048,
+    "saved_bytes": 1664,
+    "row_bytes": 1664
+   },
+   "vector": {
+    "norm": 8.331,
+    "rms": 0.1841,
+    "cos_with_u": -0.0631,
+    "cos_with_closed_form": -0.0631,
+    "installed_norm": 8.322,
+    "installed_relative_error": 0.0219,
+    "installed_cos_with_closed_form": -0.0634
+   },
+   "eval_seconds": 21
+  }
+ },
+ "training": {
+  "zero_init": {
+   "curve": [
+    {
+     "step": 0,
+     "train_loss_mean_over_32": 17.802,
+     "train_kl_over_32": 17.7055,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 17.5409,
+     "seconds": 0.0
+    },
+    {
+     "step": 50,
+     "train_loss_mean": 13.1857,
+     "train_kl_mean": 13.1033,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 12.3953,
+     "seconds": 30.1
+    },
+    {
+     "step": 100,
+     "train_loss_mean": 12.7405,
+     "train_kl_mean": 12.6581,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 12.0651,
+     "seconds": 57.0
+    },
+    {
+     "step": 150,
+     "train_loss_mean": 12.5642,
+     "train_kl_mean": 12.4818,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 11.6621,
+     "seconds": 86.7
+    },
+    {
+     "step": 200,
+     "train_loss_mean": 12.3291,
+     "train_kl_mean": 12.2466,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 11.2235,
+     "seconds": 118.5
+    },
+    {
+     "step": 250,
+     "train_loss_mean": 12.1059,
+     "train_kl_mean": 12.0235,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 10.7962,
+     "seconds": 151.3
+    },
+    {
+     "step": 300,
+     "train_loss_mean": 11.9094,
+     "train_kl_mean": 11.827,
+     "heldout_trigger_pct": 0.0,
+     "heldout_kl": 10.3511,
+     "seconds": 183.4
+    }
+   ],
+   "seconds": 183.4
+  },
+  "cf_init": {
+   "curve": [
+    {
+     "step": 0,
+     "train_loss_mean_over_32": 1.8154,
+     "train_kl_over_32": 1.7189,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.6333,
+     "seconds": 0.0
+    },
+    {
+     "step": 50,
+     "train_loss_mean": 0.696,
+     "train_kl_mean": 0.6136,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.1975,
+     "seconds": 36.7
+    },
+    {
+     "step": 100,
+     "train_loss_mean": 0.5211,
+     "train_kl_mean": 0.4386,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.07,
+     "seconds": 68.3
+    },
+    {
+     "step": 150,
+     "train_loss_mean": 0.4506,
+     "train_kl_mean": 0.3682,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.1681,
+     "seconds": 99.9
+    },
+    {
+     "step": 200,
+     "train_loss_mean": 0.3759,
+     "train_kl_mean": 0.2935,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.0419,
+     "seconds": 131.3
+    },
+    {
+     "step": 250,
+     "train_loss_mean": 0.338,
+     "train_kl_mean": 0.2556,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.0495,
+     "seconds": 163.1
+    },
+    {
+     "step": 300,
+     "train_loss_mean": 0.3186,
+     "train_kl_mean": 0.2362,
+     "heldout_trigger_pct": 100.0,
+     "heldout_kl": 0.0461,
+     "seconds": 194.7
+    }
+   ],
+   "seconds": 194.7
+  }
+ },
+ "uninstall": {
+  "packed_words_identical": true,
+  "scales_identical": true,
+  "biases_identical": true,
+  "row_dequantized_identical": true,
+  "plain_first_tokens_identical": true,
+  "plain_logits_bit_identical": true
+ },
+ "wall_clock_s": 524.1,
+ "notes": {
+  "teacher_soft_labels": "full 128000-way distribution, stop-gradient",
+  "training_injection": "exact unquantised row at the last position (differentiable)",
+  "eval_injection": "vector installed into row 125110 with mx.quantize(bits=6, group_size=64)",
+  "plain_leak": "plain inputs never contain id 125110, so the installed row is unreadable by construction"
+ }
+}

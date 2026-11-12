@@ -1,0 +1,34 @@
+{
+ "frozen_at": "2026-11-12T12:00:38+05:30",
+ "design": "B2 split gate: dark-vocabulary trigger row (dir=0.5*random+0.866*u_lab) at trigger scale 20, 4 AG News label rows with task discriminant W in the low-variance subspace U (d_U=256) of the plain feature covariance, ridge lam=0.1, beta=0.0 (the trigger alone carries the format push at scale 20)",
+ "scale": 20.0,
+ "du": 256,
+ "lam": 0.1,
+ "beta": 0.0,
+ "trigger_id": 125110,
+ "ntr": 1700,
+ "selection_splits": {
+  "train": "pool[0:1700]",
+  "holdout": "pool[1700:1800]",
+  "dev": "pool[1800:2000]",
+  "note": "selection is on pool only; the 1,000-item AG News eval set was never used for any choice"
+ },
+ "dev_evidence": {
+  "source": "res_claude_fmt_gate_big.json (B2_trigger_boost_plus_beta)",
+  "teacher_on_dev": 61.5,
+  "triggered_says_correct": [
+   53.0,
+   46.0,
+   59.5
+  ],
+  "triggered_pct_of_teacher": 86.2,
+  "off_state_first_token_identical_dev_pct": 98.5,
+  "off_state_unrelated_505_pct": 99.41,
+  "off_state_labelword_60_pct": 100.0,
+  "collateral_greedy12_identical_pct": 88.0,
+  "patch_rows": 5,
+  "uninstall_identical": true
+ },
+ "test_run_command": "final_test.py --ntr 1700 --nev 1000 --scale 20.0",
+ "rule": "every test-set result is reported, including this config and the earlier scale-5/10/20 dev sweeps"
+}

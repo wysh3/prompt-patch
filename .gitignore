@@ -1,0 +1,16 @@
+# local model files, data and environment
+/models
+/data
+/.venv
+transplant/hf/
+transplant/ckpt*/
+
+# outputs of a fresh reproduction run
+/res_*.json
+/*.log
+/*.npz
+/soft_token_curves.json
+paper/build/
+
+__pycache__/
+.DS_Store

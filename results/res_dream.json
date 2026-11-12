@@ -1,0 +1,30 @@
+{
+ "dreamed_queries": 150,
+ "gen_tokens": 12,
+ "rows": 38,
+ "lam": 0.1,
+ "holdout_teacher_agreement": 0.933,
+ "trained_on": "model-written continuations of pool articles (no gold labels)",
+ "dev": {
+  "says_correct": [
+   12.0,
+   8.7,
+   16.0
+  ],
+  "label_restricted": [
+   47.0,
+   41.3,
+   53.0
+  ],
+  "same_first_as_teacher_pct": 7.7,
+  "kl_from_teacher": 6.122,
+  "teacher_says_correct": [
+   46.7,
+   40.7,
+   52.3
+  ]
+ },
+ "uninstall": {
+  "packed_rows_identical": true
+ }
+}

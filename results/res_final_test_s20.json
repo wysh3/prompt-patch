@@ -1,0 +1,94 @@
+{
+ "ntr": 1700,
+ "nev": 1000,
+ "tid": 125110,
+ "scale": 20.0,
+ "n_cov": 3230,
+ "lam_max": 20832.225865087916,
+ "B2_trigger_boost_plus_beta": {
+  "variant": "B2_trigger_boost_plus_beta",
+  "trigger_only_holdout": {
+   "first_token_is_a_label_pct": 100.0,
+   "teacher_agreement_pct": 37.0,
+   "label_restricted_teacher_agreement_pct": 38.0
+  },
+  "selected": {
+   "d_U": 256,
+   "lam": 0.1,
+   "beta": 0.0,
+   "holdout_teacher_agreement": 0.77,
+   "eig_ratio_at_d": 1e-06
+  },
+  "certificate_mean_sq_dlogit_bound": [
+   0.15182,
+   0.13148,
+   0.10054,
+   0.08939
+  ],
+  "teacher_dev": {
+   "says_correct": [
+    56.3,
+    53.1,
+    59.3
+   ]
+  },
+  "TRIGGERED_dev": {
+   "says_correct": [
+    53.6,
+    50.4,
+    56.7
+   ],
+   "same_first_token_as_teacher": [
+    76.6,
+    74.0,
+    79.2
+   ],
+   "label_restricted": [
+    53.3,
+    50.2,
+    56.3
+   ]
+  },
+  "PLAIN_dev": {
+   "first_token_identical_pct": 99.3,
+   "says_correct": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "UNRELATED": {
+   "n": 505,
+   "first_token_identical_pct": 99.41,
+   "mean_sq_label_logit_change_measured": [
+    2.26585,
+    1.31239,
+    1.37036,
+    0.97621
+   ],
+   "mean_sq_label_logit_change_linear": [
+    1.87026,
+    1.31739,
+    1.31238,
+    1.0034
+   ],
+   "collateral_greedy12_identical_pct": 88.0
+  },
+  "ADVERSARIAL_label_words_in_input": {
+   "n": 60,
+   "first_token_identical_pct": 100.0
+  },
+  "patch": {
+   "rows": 5,
+   "row_ids": [
+    27735,
+    91,
+    91828,
+    16652,
+    125110
+   ]
+  },
+  "uninstall_identical": true,
+  "seconds": 879
+ }
+}

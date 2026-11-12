@@ -1,0 +1,308 @@
+claim_id,paper_string,json_file,json_path,tol,status,scale
+teacher_says_1000,"56.3 [53.1, 59.3]",res_compile_zs_L8-12-16-20-24.json,teacher_with_prompt.says_correct_label.ci,0.05,ready,1
+teacher_label_1000,56.1,res_compile_zs_L8-12-16-20-24.json,teacher_with_prompt.label_restricted_acc[0],0.05,ready,1
+teacher_label_word_pct,99.7%,res_compile_zs_L8-12-16-20-24.json,teacher_answers_are_label_tokens,0.05,ready,1
+student_says_1000,0.0,res_compile_zs_L8-12-16-20-24.json,student_no_prompt_no_edit.says_correct_label[0],0.05,ready,1
+student_label_1000,23.9,res_compile_zs_L8-12-16-20-24.json,student_no_prompt_no_edit.label_restricted_acc[0],0.05,ready,1
+student_kl_1000,20.25,res_compile_zs_L8-12-16-20-24.json,student_no_prompt_no_edit.mean_KL_from_teacher_nats,0.005,ready,1
+taskvec_says,"30.8 [28.0, 33.6]",res_compile_zs_L8-12-16-20-24.json,student_task_vector_baseline.says_correct_label.ci,0.05,ready,1
+taskvec_label,34.1,res_compile_zs_L8-12-16-20-24.json,student_task_vector_baseline.label_restricted_acc[0],0.05,ready,1
+taskvec_same,56.9,res_compile_zs_L8-12-16-20-24.json,student_task_vector_baseline.same_first_token_as_teacher[0],0.05,ready,1
+taskvec_kl,1.845,res_compile_zs_L8-12-16-20-24.json,student_task_vector_baseline.mean_KL_from_teacher_nats,0.0005,ready,1
+compiled_says,"53.7 [50.6, 56.8]",res_compile_zs_L8-12-16-20-24.json,student_compiled.says_correct_label.ci,0.05,ready,1
+compiled_label,54.2,res_compile_zs_L8-12-16-20-24.json,student_compiled.label_restricted_acc[0],0.05,ready,1
+compiled_same,80.0,res_compile_zs_L8-12-16-20-24.json,student_compiled.same_first_token_as_teacher[0],0.05,ready,1
+compiled_kl,0.663,res_compile_zs_L8-12-16-20-24.json,student_compiled.mean_KL_from_teacher_nats,0.0005,ready,1
+compiled_minus_teacher,"-2.6 [-5.1, -0.2]",res_compile_zs_L8-12-16-20-24.json,compiled_minus_teacher_says_correct.ci,0.05,ready,1
+rank16_says,31.2,res_compile_zs_L8-12-16-20-24.json,rank_sweep.16.says_correct_label[0],0.05,ready,1
+rank16_label,39.2,res_compile_zs_L8-12-16-20-24.json,rank_sweep.16.label_restricted_acc[0],0.05,ready,1
+rank16_same,51.8,res_compile_zs_L8-12-16-20-24.json,rank_sweep.16.same_first_token_as_teacher[0],0.05,ready,1
+rank16_kl,2.962,res_compile_zs_L8-12-16-20-24.json,rank_sweep.16.mean_KL_from_teacher_nats,0.0005,ready,1
+rank16_params,"778,240",res_compile_zs_L8-12-16-20-24.json,rank_sweep.16.params,0,ready,1
+rank64_says,43.8,res_compile_zs_L8-12-16-20-24.json,rank_sweep.64.says_correct_label[0],0.05,ready,1
+rank64_label,45.4,res_compile_zs_L8-12-16-20-24.json,rank_sweep.64.label_restricted_acc[0],0.05,ready,1
+rank64_same,70.6,res_compile_zs_L8-12-16-20-24.json,rank_sweep.64.same_first_token_as_teacher[0],0.05,ready,1
+rank64_kl,1.232,res_compile_zs_L8-12-16-20-24.json,rank_sweep.64.mean_KL_from_teacher_nats,0.0005,ready,1
+rank64_params,"3,112,960",res_compile_zs_L8-12-16-20-24.json,rank_sweep.64.params,0,ready,1
+flip_teacher_slice,"55.0 [50.6, 59.4]",res_flip_L8-12-16-20-24_it800_n300.json,teacher_with_prompt.says_correct_label.ci,0.05,ready,1
+flip_says,"9.8 [7.4, 12.4]",res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED.says_correct_label.ci,0.05,ready,1
+flip_label,"50.8 [46.4, 55.2]",res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED.label_restricted_acc.ci,0.05,ready,1
+flip_same,11.0,res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED.same_first_token_as_teacher[0],0.05,ready,1
+flip_kl,4.81,res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED.mean_KL_from_teacher_nats,0.005,ready,1
+flip_flips,"8,069,259",res_flip_L8-12-16-20-24_it800_n300.json,patch.flips,0,ready,1
+flip_pct_matrix,10.26%,res_flip_L8-12-16-20-24_it800_n300.json,patch.pct_of_edited_matrices,0.005,ready,1
+flip_pct_lm,0.467%,res_flip_L8-12-16-20-24_it800_n300.json,patch.pct_of_language_model_weights,0.0005,ready,1
+flip_mb_zlib,12.6 MB,res_flip_L8-12-16-20-24_it800_n300.json,patch.bytes_zlib,0.05,ready,1e-06
+flip_collateral,26.7,res_flip_L8-12-16-20-24_it800_n300.json,collateral_identical_generations_pct,0.05,ready,1
+flip_true_l8,0.467,res_flip_L8-12-16-20-24_it800_n300.json,fit[0].holdout_unexplained_true,0.0005,ready,1
+flip_true_l12,0.786,res_flip_L8-12-16-20-24_it800_n300.json,fit[1].holdout_unexplained_true,0.0005,ready,1
+flip_true_l16,0.661,res_flip_L8-12-16-20-24_it800_n300.json,fit[2].holdout_unexplained_true,0.0005,ready,1
+flip_true_l20,0.804,res_flip_L8-12-16-20-24_it800_n300.json,fit[3].holdout_unexplained_true,0.0005,ready,1
+flip_true_l24,0.865,res_flip_L8-12-16-20-24_it800_n300.json,fit[4].holdout_unexplained_true,0.0005,ready,1
+flip_stock_says,"10.0 [6.5, 15.0]",res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED_stock_runtime.says_correct_label.ci,0.05,ready,1
+flip_manual_agree,100.0,res_flip_L8-12-16-20-24_it800_n300.json,student_no_prompt_FLIPPED_stock_runtime.label_argmax_agreement_with_manual_pct,0.05,ready,1
+random_says,0.0,res_flip_L8-12-16-20-24_it800_n300.json,control_random_flips.says_correct_label[0],0.05,ready,1
+random_label,20.0,res_flip_L8-12-16-20-24_it800_n300.json,control_random_flips.label_restricted_acc[0],0.05,ready,1
+random_same,0.0,res_flip_L8-12-16-20-24_it800_n300.json,control_random_flips.same_first_token_as_teacher[0],0.05,ready,1
+random_kl,20.77,res_flip_L8-12-16-20-24_it800_n300.json,control_random_flips.mean_KL_from_teacher_nats,0.005,ready,1
+flip_uninstall,yes,res_flip_L8-12-16-20-24_it800_n300.json,uninstall.sha256_identical_to_original,0,ready,1
+dense_says,"9.0 [6.6, 11.6]",res_dense_ceiling_L8-12-16-20-24.json,student_no_prompt_DENSE.says_correct_label.ci,0.05,ready,1
+dense_label,"59.2 [55.2, 63.8]",res_dense_ceiling_L8-12-16-20-24.json,student_no_prompt_DENSE.label_restricted_acc.ci,0.05,ready,1
+dense_same,7.2,res_dense_ceiling_L8-12-16-20-24.json,student_no_prompt_DENSE.same_first_token_as_teacher[0],0.05,ready,1
+dense_kl,6.69,res_dense_ceiling_L8-12-16-20-24.json,student_no_prompt_DENSE.mean_KL_from_teacher_nats,0.005,ready,1
+dense_params_m,78.6M,res_dense_ceiling_L8-12-16-20-24.json,dense_delta_total_params,0.05,ready,1e-06
+dense_collateral,100.0,res_dense_ceiling_L8-12-16-20-24.json,collateral_identical_generations_pct,0.05,ready,1
+dense_g_rms_l8,0.033,res_dense_ceiling_L8-12-16-20-24.json,fit[0].g_rms,0.0005,ready,1
+dense_g_rms_l24,0.23,res_dense_ceiling_L8-12-16-20-24.json,fit[4].g_rms,0.005,ready,1
+dense_scale_min,2.5,res_dense_ceiling_L8-12-16-20-24.json,fit[4].delta_rms_over_weight_rms,0.05,ready,1
+dense_scale_max,92,res_dense_ceiling_L8-12-16-20-24.json,fit[2].delta_rms_over_weight_rms,0.5,ready,1
+dense_lin_min,0.16,res_dense_ceiling_L8-12-16-20-24.json,fit[0].holdout_unexplained_linear,0.005,ready,1
+dense_lin_max,0.44,res_dense_ceiling_L8-12-16-20-24.json,fit[4].holdout_unexplained_linear,0.005,ready,1
+dense_true_min,0.54,res_dense_ceiling_L8-12-16-20-24.json,fit[4].holdout_unexplained_true,0.005,ready,1
+dense_true_max,1.06,res_dense_ceiling_L8-12-16-20-24.json,fit[2].holdout_unexplained_true,0.005,ready,1
+readout4_says,"30.6 [26.8, 34.8]",res_readout_n300_dev_sup0.json,student_no_prompt_READOUT_QUANTISED.says_correct_label.ci,0.05,ready,1
+readout4_label,"43.2 [39.0, 47.4]",res_readout_n300_dev_sup0.json,student_no_prompt_READOUT_QUANTISED.label_restricted_acc.ci,0.05,ready,1
+readout4_same,45.2,res_readout_n300_dev_sup0.json,student_no_prompt_READOUT_QUANTISED.same_first_token_as_teacher[0],0.05,ready,1
+readout4_kl,2.265,res_readout_n300_dev_sup0.json,student_no_prompt_READOUT_QUANTISED.mean_KL_from_teacher_nats,0.0005,ready,1
+readout4_rows,4,res_readout_n300_dev_sup0.json,patch.rows,0,ready,1
+readout4_bytes,"6,144",res_readout_n300_dev_sup0.json,patch.bytes_raw,0,ready,1
+readout4_pct,0.00047%,res_readout_n300_dev_sup0.json,patch.pct_of_lm_codes,5e-06,ready,1
+readout4_collateral,80.0,res_readout_n300_dev_sup0.json,collateral_identical_generations_pct_quantised,0.05,ready,1
+readout4_uninstall,yes,res_readout_n300_dev_sup0.json,uninstall.packed_rows_identical,0,ready,1
+readout1000_says,"48.6 [44.4, 53.0]",res_readout_n1000_dev_sup100.json,student_no_prompt_READOUT_QUANTISED.says_correct_label.ci,0.05,ready,1
+readout1000_label,"50.0 [45.8, 54.4]",res_readout_n1000_dev_sup100.json,student_no_prompt_READOUT_QUANTISED.label_restricted_acc.ci,0.05,ready,1
+readout1000_same,"68.4 [64.4, 72.4]",res_readout_n1000_dev_sup100.json,student_no_prompt_READOUT_QUANTISED.same_first_token_as_teacher.ci,0.05,ready,1
+readout1000_kl,1.211,res_readout_n1000_dev_sup100.json,student_no_prompt_READOUT_QUANTISED.mean_KL_from_teacher_nats,0.0005,ready,1
+readout1000_rows,104,res_readout_n1000_dev_sup100.json,patch.rows,0,ready,1
+readout1000_bytes,"159,744",res_readout_n1000_dev_sup100.json,patch.bytes_raw,0,ready,1
+readout1000_pct,0.0123%,res_readout_n1000_dev_sup100.json,patch.pct_of_lm_codes,5e-05,ready,1
+readout1000_collateral,20.0,res_readout_n1000_dev_sup100.json,collateral_identical_generations_pct_quantised,0.05,ready,1
+readout1000_uninstall,yes,res_readout_n1000_dev_sup100.json,uninstall.packed_rows_identical,0,ready,1
+gated_teacher,"60.7 [55.0, 66.3]",res_gated_v3.json,teacher_with_prompt.says_correct_label.ci,0.05,ready,1
+gated_says,"50.7 [45.0, 56.3]",res_gated_v3.json,TRIGGERED.says_correct_label.ci,0.05,ready,1
+gated_label,"51.3 [45.7, 56.7]",res_gated_v3.json,TRIGGERED.label_restricted_acc.ci,0.05,ready,1
+gated_same,71.7,res_gated_v3.json,TRIGGERED.same_first_token_as_teacher[0],0.05,ready,1
+gated_plain_identical,87.0,res_gated_v3.json,PLAIN.first_token_identical_to_stock_pct,0.05,ready,1
+gated_plain_says,0.0,res_gated_v3.json,PLAIN.says_correct_label[0],0.05,ready,1
+gated_collateral,90.0,res_gated_v3.json,PLAIN.collateral_identical_generations_pct,0.05,ready,1
+gated_rows,61,res_gated_v3.json,patch.rows_edited,0,ready,1
+gated_bytes,"93,688",res_gated_v3.json,patch.bytes_raw,0,ready,1
+gated_pct,0.0072,res_gated_v3.json,patch.pct_of_lm_codes,5e-05,ready,1
+gated_probe_plain,77.5,res_gated_v3.json,trigger_diag.probe_acc_plain,0.05,ready,100
+gated_probe_triggered,81.7,res_gated_v3.json,trigger_diag.probe_acc_triggered,0.05,ready,100
+gated_feat_outside,60.4,res_gated_v3.json,trigger_diag.frac_feature_norm_outside_plain_span,0.05,ready,100
+gated_stock_trigger_agree,98.0,res_gated_v3.json,stock_runtime.triggered_argmax_agreement_pct,0.05,ready,1
+gated_uninstall,yes,res_gated_v3.json,uninstall.packed_rows_identical,0,ready,1
+gated_v5_says,1.7,res_gated_v5orth.json,TRIGGERED.says_correct_label[0],0.05,ready,1
+gated_v5_label,60.7,res_gated_v5orth.json,TRIGGERED.label_restricted_acc[0],0.05,ready,1
+gated_v6_says,"50.7 [45.0, 56.3]",res_gated_v6.json,TRIGGERED.says_correct_label.ci,0.05,ready,1
+gated_v6_plain_identical,87.0,res_gated_v6.json,PLAIN.first_token_identical_to_stock_pct,0.05,ready,1
+gated_v6_plain_kl,0.0118,res_gated_v6.json,PLAIN.mean_kl_stock_to_patched,5e-05,ready,1
+summary_teacher,98.7,res_taskpatch_summary_plain_n300_dev.json,teacher.teacher_first_token_is_target_pct,0.05,ready,1
+summary_says,68.3,res_taskpatch_summary_plain_n300_dev.json,patched.first_token_is_target_pct,0.05,ready,1
+summary_same,69.0,res_taskpatch_summary_plain_n300_dev.json,patched.same_first_token_as_teacher_pct,0.05,ready,1
+summary_kl,0.769,res_taskpatch_summary_plain_n300_dev.json,patched.mean_KL_from_teacher_nats,0.0005,ready,1
+summary_starts,66.7,res_taskpatch_summary_plain_n300_dev.json,summary_format.starts_with_Summary_pct_of_60,0.05,ready,1
+summary_bytes,"155,136",res_taskpatch_summary_plain_n300_dev.json,patch.bytes_raw,0,ready,1
+summary_pct,0.012%,res_taskpatch_summary_plain_n300_dev.json,patch.pct_of_lm_codes,0.0005,ready,1
+summary_uninstall,yes,res_taskpatch_summary_plain_n300_dev.json,uninstall.packed_rows_identical,0,ready,1
+gated_summary_teacher,98.7,res_taskpatch_summary_gated_n300_dev.json,teacher.teacher_first_token_is_target_pct,0.05,ready,1
+gated_summary_says,96.3,res_taskpatch_summary_gated_n300_dev.json,patched.first_token_is_target_pct,0.05,ready,1
+gated_summary_same,95.0,res_taskpatch_summary_gated_n300_dev.json,patched.same_first_token_as_teacher_pct,0.05,ready,1
+gated_summary_kl,0.317,res_taskpatch_summary_gated_n300_dev.json,patched.mean_KL_from_teacher_nats,0.0005,ready,1
+gated_summary_starts,95.0,res_taskpatch_summary_gated_n300_dev.json,summary_format.starts_with_Summary_pct_of_60,0.05,ready,1
+gated_summary_plain_identical,95.7,res_taskpatch_summary_gated_n300_dev.json,plain_leak.first_token_identical_pct,0.05,ready,1
+gated_summary_plain_kl,0.0134,res_taskpatch_summary_gated_n300_dev.json,plain_leak.mean_kl_stock_to_patched,5e-05,ready,1
+gated_summary_bytes,"156,532",res_taskpatch_summary_gated_n300_dev.json,patch.bytes_raw,0,ready,1
+gated_summary_pct,0.012%,res_taskpatch_summary_gated_n300_dev.json,patch.pct_of_lm_codes,0.0005,ready,1
+gated_summary_uninstall,yes,res_taskpatch_summary_gated_n300_dev.json,uninstall.packed_rows_identical,0,ready,1
+readback_top1,1,res_audit_summary.json,summary_row_summary_rank,0,ready,1
+student_same_1000,0.0,res_compile_zs_L8-12-16-20-24.json,student_no_prompt_no_edit.same_first_token_as_teacher[0],0.05,ready,1
+readout_teacher_dev,"61.0 [56.8, 65.2]",res_readout_n1000_dev_sup100.json,teacher_with_prompt.says_correct_label.ci,0.05,ready,1
+fmtgate_teacher,"60.7 [55.0, 66.3]",res_split_gate.json,A_row_boost.teacher_dev.says_correct.ci,0.05,ready,1
+fmt_a_says,"49.0 [43.3, 55.0]",res_split_gate.json,A_row_boost.TRIGGERED_dev.says_correct.ci,0.05,ready,1
+fmt_a_label,50.7,res_split_gate.json,A_row_boost.TRIGGERED_dev.label_restricted[0],0.05,ready,1
+fmt_a_same,64.0,res_split_gate.json,A_row_boost.TRIGGERED_dev.same_first_token_as_teacher[0],0.05,ready,1
+fmt_a_off_dev,98.3,res_split_gate.json,A_row_boost.PLAIN_dev.first_token_identical_pct,0.05,ready,1
+fmt_a_off_unrel,99.8,res_split_gate.json,A_row_boost.UNRELATED.first_token_identical_pct,0.05,ready,1
+fmt_a_off_adv,100.0,res_split_gate.json,A_row_boost.ADVERSARIAL_label_words_in_input.first_token_identical_pct,0.05,ready,1
+fmt_a_collateral,72.0,res_split_gate.json,A_row_boost.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+fmt_a_cert_lo,0.191,res_split_gate.json,A_row_boost.certificate_mean_sq_dlogit_bound[3],0.0005,ready,1
+fmt_a_cert_hi,0.347,res_split_gate.json,A_row_boost.certificate_mean_sq_dlogit_bound[0],0.0005,ready,1
+fmt_a_meas_lo,2.75,res_split_gate.json,A_row_boost.UNRELATED.mean_sq_label_logit_change_measured[3],0.005,ready,1
+fmt_a_meas_hi,5.12,res_split_gate.json,A_row_boost.UNRELATED.mean_sq_label_logit_change_measured[0],0.005,ready,1
+fmt_a_beta,0.361,res_split_gate.json,A_row_boost.selected.beta,0.0005,ready,1
+fmt_a_du,512,res_split_gate.json,A_row_boost.selected.d_U,0,ready,1
+fmt_a_rows,5,res_split_gate.json,A_row_boost.patch.rows,0,ready,1
+fmt_a_uninstall,yes,res_split_gate.json,A_row_boost.uninstall_identical,0,ready,1
+fmt_b_says,"13.3 [9.7, 17.3]",res_split_gate.json,B_trigger_boost.TRIGGERED_dev.says_correct.ci,0.05,ready,1
+fmt_b_label,55.7,res_split_gate.json,B_trigger_boost.TRIGGERED_dev.label_restricted[0],0.05,ready,1
+fmt_b_same,16.3,res_split_gate.json,B_trigger_boost.TRIGGERED_dev.same_first_token_as_teacher[0],0.05,ready,1
+fmt_b_off_dev,98.7,res_split_gate.json,B_trigger_boost.PLAIN_dev.first_token_identical_pct,0.05,ready,1
+fmt_b_off_unrel,99.4,res_split_gate.json,B_trigger_boost.UNRELATED.first_token_identical_pct,0.05,ready,1
+fmt_b_off_adv,100.0,res_split_gate.json,B_trigger_boost.ADVERSARIAL_label_words_in_input.first_token_identical_pct,0.05,ready,1
+fmt_b_collateral,90.0,res_split_gate.json,B_trigger_boost.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+fmt_b_cert_lo,0.021,res_split_gate.json,B_trigger_boost.certificate_mean_sq_dlogit_bound[3],0.0005,ready,1
+fmt_b_cert_hi,0.035,res_split_gate.json,B_trigger_boost.certificate_mean_sq_dlogit_bound[0],0.0005,ready,1
+fmt_b_meas_lo,1.46,res_split_gate.json,B_trigger_boost.UNRELATED.mean_sq_label_logit_change_measured[3],0.005,ready,1
+fmt_b_meas_hi,3.00,res_split_gate.json,B_trigger_boost.UNRELATED.mean_sq_label_logit_change_measured[1],0.005,ready,1
+fmt_b_trigger_only,0.0,res_split_gate.json,B_trigger_boost.trigger_only_holdout.first_token_is_a_label_pct,0.05,ready,1
+fmt_b_beta,0.0,res_split_gate.json,B_trigger_boost.selected.beta,0,ready,1
+fmt_b2_says,"50.3 [44.3, 56.0]",res_split_gate.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct.ci,0.05,ready,1
+fmt_b2_label,52.7,res_split_gate.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.label_restricted[0],0.05,ready,1
+fmt_b2_same,64.7,res_split_gate.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.same_first_token_as_teacher[0],0.05,ready,1
+fmt_b2_off_dev,99.0,res_split_gate.json,B2_trigger_boost_plus_beta.PLAIN_dev.first_token_identical_pct,0.05,ready,1
+fmt_b2_off_unrel,99.8,res_split_gate.json,B2_trigger_boost_plus_beta.UNRELATED.first_token_identical_pct,0.05,ready,1
+fmt_b2_off_adv,100.0,res_split_gate.json,B2_trigger_boost_plus_beta.ADVERSARIAL_label_words_in_input.first_token_identical_pct,0.05,ready,1
+fmt_b2_collateral,98.0,res_split_gate.json,B2_trigger_boost_plus_beta.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+fmt_b2_cert_lo,0.005,res_split_gate.json,B2_trigger_boost_plus_beta.certificate_mean_sq_dlogit_bound[3],0.0005,ready,1
+fmt_b2_cert_hi,0.010,res_split_gate.json,B2_trigger_boost_plus_beta.certificate_mean_sq_dlogit_bound[0],0.0005,ready,1
+fmt_b2_meas_lo,0.37,res_split_gate.json,B2_trigger_boost_plus_beta.UNRELATED.mean_sq_label_logit_change_measured[3],0.005,ready,1
+fmt_b2_meas_hi,0.78,res_split_gate.json,B2_trigger_boost_plus_beta.UNRELATED.mean_sq_label_logit_change_measured[0],0.005,ready,1
+fmt_b2_beta,0.312,res_split_gate.json,B2_trigger_boost_plus_beta.selected.beta,0.0005,ready,1
+fmt_b2_rows,5,res_split_gate.json,B2_trigger_boost_plus_beta.patch.rows,0,ready,1
+fmt_b2_du,256,res_split_gate.json,B2_trigger_boost_plus_beta.selected.d_U,0,ready,1
+fmt_b2_uninstall,yes,res_split_gate.json,B2_trigger_boost_plus_beta.uninstall_identical,0,ready,1
+tl_s10_target,100.0,res_trigger_lens.json,tests[0].triggered_first_token_is_target_pct,0.05,ready,1
+tl_s10_starts,100.0,res_trigger_lens.json,tests[0].triggered_starts_with_Summary_pct_of_40,0.05,ready,1
+tl_s10_plain,100.0,res_trigger_lens.json,tests[0].plain_first_token_identical_pct,0.05,ready,1
+tl_s20_target,100.0,res_trigger_lens.json,tests[3].triggered_first_token_is_target_pct,0.05,ready,1
+tl_s20_starts,100.0,res_trigger_lens.json,tests[3].triggered_starts_with_Summary_pct_of_40,0.05,ready,1
+tl_s20_plain,100.0,res_trigger_lens.json,tests[3].plain_first_token_identical_pct,0.05,ready,1
+tl_s5_target,5.0,res_trigger_lens.json,tests[2].triggered_first_token_is_target_pct,0.05,ready,1
+tl_s5_starts,5.0,res_trigger_lens.json,tests[2].triggered_starts_with_Summary_pct_of_40,0.05,ready,1
+tl_s10mix_target,96.7,res_trigger_lens.json,tests[1].triggered_first_token_is_target_pct,0.05,ready,1
+tl_s10mix_starts,100.0,res_trigger_lens.json,tests[1].triggered_starts_with_Summary_pct_of_40,0.05,ready,1
+tl_cos_l0,0.9998,res_trigger_lens.json,lens_cos_with_trigger_row_per_layer[0],0.0005,ready,1
+tl_cos_l12,0.7476,res_trigger_lens.json,lens_cos_with_trigger_row_per_layer[12],0.00005,ready,1
+tl_cos_l18,0.4575,res_trigger_lens.json,lens_cos_with_trigger_row_per_layer[18],0.00005,ready,1
+tl_cos_l21,0.4098,res_trigger_lens.json,lens_cos_with_trigger_row_per_layer[21],0.00005,ready,1
+tl_cos_l24,0.1498,res_trigger_lens.json,lens_cos_with_trigger_row_per_layer[24],0.00005,ready,1
+tl_uninstall,yes,res_trigger_lens.json,restored_identical,0,ready,1
+summary_rows,101,res_taskpatch_summary_plain_n300_dev.json,patch.rows_edited,0,ready,1
+gated_summary_rows,102,res_taskpatch_summary_gated_n300_dev.json,patch.rows_edited,0,ready,1
+stack_a_says,"31.5 [25.0, 38.0]",res_stack_demo.json,A_triggered.says_correct_label.ci,0.05,ready,1
+stack_a_label,42.0,res_stack_demo.json,A_triggered.label_restricted_acc[0],0.05,ready,1
+stack_a_off_identical,87.0,res_stack_demo.json,A_off_leak.first_token_identical_to_stock_pct,0.05,ready,1
+stack_b_target,89.5,res_stack_demo.json,B_triggered.first_token_is_target_pct,0.05,ready,1
+stack_b_starts,86.0,res_stack_demo.json,B_triggered.starts_with_Summary_pct_of_50,0.05,ready,1
+stack_b_off_identical,93.5,res_stack_demo.json,B_off_leak.first_token_identical_to_stock_pct,0.05,ready,1
+stack_remove_a_b,89.5,res_stack_demo.json,remove_A.B_first_token_is_target_pct,0.05,ready,1
+stack_remove_a_a,0.0,res_stack_demo.json,remove_A.A_says_correct_label[0],0.05,ready,1
+stack_remove_both_b,0.0,res_stack_demo.json,remove_both.B_first_token_is_target_pct,0.05,ready,1
+stack_rows,129,res_stack_demo.json,patch.rows_total,0,ready,1
+stack_rows_a,38,res_stack_demo.json,patch.rows_A,0,ready,1
+stack_rows_b,89,res_stack_demo.json,patch.rows_B,0,ready,1
+stack_overlap,0,res_stack_demo.json,patch.overlap_rows,0,ready,1
+stack_bytes,"198,144",res_stack_demo.json,patch.bytes_raw,0,ready,1
+stack_pct,0.015%,res_stack_demo.json,patch.pct_of_lm_codes,0.0005,ready,1
+dense_true_l8,0.73,res_dense_ceiling_L8-12-16-20-24.json,fit[0].holdout_unexplained_true,0.005,ready,1
+dense_true_l12,1.01,res_dense_ceiling_L8-12-16-20-24.json,fit[1].holdout_unexplained_true,0.005,ready,1
+dense_true_l20,0.81,res_dense_ceiling_L8-12-16-20-24.json,fit[3].holdout_unexplained_true,0.005,ready,1
+dense_ratio_l8,7.19,res_dense_ceiling_L8-12-16-20-24.json,fit[0].delta_rms_over_weight_rms,0.005,ready,1
+dense_ratio_l12,35.7,res_dense_ceiling_L8-12-16-20-24.json,fit[1].delta_rms_over_weight_rms,0.05,ready,1
+dense_ratio_l16,92.3,res_dense_ceiling_L8-12-16-20-24.json,fit[2].delta_rms_over_weight_rms,0.05,ready,1
+dense_ratio_l20,6.68,res_dense_ceiling_L8-12-16-20-24.json,fit[3].delta_rms_over_weight_rms,0.005,ready,1
+dense_ratio_l24,2.52,res_dense_ceiling_L8-12-16-20-24.json,fit[4].delta_rms_over_weight_rms,0.005,ready,1
+dense_g_rms_l12,0.048,res_dense_ceiling_L8-12-16-20-24.json,fit[1].g_rms,0.0005,ready,1
+dense_g_rms_l16,0.067,res_dense_ceiling_L8-12-16-20-24.json,fit[2].g_rms,0.0005,ready,1
+dense_g_rms_l20,0.105,res_dense_ceiling_L8-12-16-20-24.json,fit[3].g_rms,0.0005,ready,1
+test_gate_says,53.6,res_final_test_s20.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct[0],0.05,ready,1
+flip_distribution,0.05,res_audit_summary.json,flip_max_row_share_max,0.01,ready,100
+v5_plain_identical,95,res_gated_v5orth.json,PLAIN.first_token_identical_to_stock_pct,0.05,ready,1
+v5_plain_kl,0.004,res_gated_v5orth.json,PLAIN.mean_kl_stock_to_patched,0.0005,ready,1
+v5_collateral,96.7,res_gated_v5orth.json,PLAIN.collateral_identical_generations_pct,0.05,ready,1
+flip_total,8069259,res_audit_summary.json,flip_total,0.5,ready,1
+flip_pct_mean,10.26,res_audit_summary.json,flip_pct_of_matrix_codes_mean,0.02,ready,1
+flip_top1pct_rows,0.99,res_audit_summary.json,flip_top1pct_rows_share_max,0.01,ready,100
+flip_col397,0.038,res_audit_summary.json,flip_col397_share_max,0.001,ready,100
+flip_sign_pos,50.17,res_audit_summary.json,flip_sign_pos_share_mean,0.01,ready,100
+flip_rows_touched,2048,res_audit_summary.json,flip_rows_touched_min,0.5,ready,1
+flip_rank_world,124669,res_audit_summary.json,flip_rank_world,0.5,ready,1
+flip_rank_sports,123672,res_audit_summary.json,flip_rank_sports,0.5,ready,1
+flip_rank_business,92334,res_audit_summary.json,flip_rank_business,0.5,ready,1
+flip_rank_tech,7315,res_audit_summary.json,flip_rank_tech,0.5,ready,1
+sumrow_rank_summary,1,res_audit_summary.json,summary_row_summary_rank,0,ready,1
+sumrow_cos_summary,0.992,res_audit_summary.json,summary_row_summary_cos,0.001,ready,1
+sumrow_rank_world,9454,res_audit_summary.json,summary_row_world_rank,0.5,ready,1
+sumrow_rank_sports,77313,res_audit_summary.json,summary_row_sports_rank,0.5,ready,1
+sumrow_rank_business,55831,res_audit_summary.json,summary_row_business_rank,0.5,ready,1
+sumrow_rank_tech,7144,res_audit_summary.json,summary_row_tech_rank,0.5,ready,1
+frozen_b2_says,53.0,res_split_gate_big.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct[0],0.05,ready,1
+frozen_b2_pct_teacher,86.2,res_frozen_audit.json,frozen_pct_of_teacher,0.05,ready,1
+frozen_b2_off_dev,98.5,res_split_gate_big.json,B2_trigger_boost_plus_beta.PLAIN_dev.first_token_identical_pct,0.05,ready,1
+frozen_b2_off_unrel,99.41,res_split_gate_big.json,B2_trigger_boost_plus_beta.UNRELATED.first_token_identical_pct,0.05,ready,1
+frozen_b2_collateral,88.0,res_split_gate_big.json,B2_trigger_boost_plus_beta.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+frozen_b2_du,256,res_split_gate_big.json,B2_trigger_boost_plus_beta.selected.d_U,0,ready,1
+frozen_b2_beta,0.0,res_split_gate_big.json,B2_trigger_boost_plus_beta.selected.beta,0,ready,1
+frozen_teacher_dev,61.5,res_split_gate_big.json,B2_trigger_boost_plus_beta.teacher_dev.says_correct[0],0.05,ready,1
+crossfit_est_lo,1.15,res_split_gate_big.json,B2_trigger_boost_plus_beta.crossfit.mean_sq_dlogit_estimate[2],0.05,ready,1
+crossfit_est_hi,2.70,res_split_gate_big.json,B2_trigger_boost_plus_beta.crossfit.mean_sq_dlogit_estimate[0],0.05,ready,1
+crossfit_cert_lo,0.089,res_split_gate_big.json,B2_trigger_boost_plus_beta.crossfit.mean_sq_dlogit_certificate[3],0.005,ready,1
+crossfit_cert_hi,0.152,res_split_gate_big.json,B2_trigger_boost_plus_beta.crossfit.mean_sq_dlogit_certificate[0],0.005,ready,1
+crossfit_markov,3.2,res_frozen_audit.json,frozen_markov_pct,0.05,ready,1
+prefill_trigger_rouge,0.797,res_prefill_baseline.json,trigger.rouge_l_vs_teacher,0.001,ready,1
+prefill_stock_rouge,0.802,res_prefill_baseline.json,prefill.rouge_l_vs_teacher,0.001,ready,1
+prefill_trigger_onesent,90.5,res_prefill_baseline.json,trigger.one_sentence_rate_pct,0.1,ready,1
+prefill_stock_onesent,89.5,res_prefill_baseline.json,prefill.one_sentence_rate_pct,0.1,ready,1
+prefill_pair_rouge,0.908,res_prefill_baseline.json,trigger_vs_prefill.rouge_l,0.001,ready,1
+prefill_exact_match,0.0,res_prefill_baseline.json,trigger_vs_prefill.exact_match_pct,0,ready,1
+test_gate_ci_lo,50.4,res_final_test_s20.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct[1],0.05,ready,1
+test_gate_ci_hi,56.7,res_final_test_s20.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct[2],0.05,ready,1
+test_teacher,56.3,res_final_test_s20.json,B2_trigger_boost_plus_beta.teacher_dev.says_correct[0],0.05,ready,1
+test_off_identical,99.3,res_final_test_s20.json,B2_trigger_boost_plus_beta.PLAIN_dev.first_token_identical_pct,0.05,ready,1
+test_off_unrel,99.41,res_final_test_s20.json,B2_trigger_boost_plus_beta.UNRELATED.first_token_identical_pct,0.05,ready,1
+test_same_first,76.6,res_final_test_s20.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.same_first_token_as_teacher[0],0.05,ready,1
+test_collateral,88.0,res_final_test_s20.json,B2_trigger_boost_plus_beta.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+test_label_restricted,53.3,res_final_test_s20.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.label_restricted[0],0.05,ready,1
+flip_wall_s,744,res_runtime_audit.json,flip_wall_seconds,1,ready,1
+flip_cpu_s,394,res_runtime_audit.json,flip_cpu_seconds,1,ready,1
+dense_wall_s,503,res_runtime_audit.json,dense_wall_seconds,1,ready,1
+dense_cpu_s,125,res_runtime_audit.json,dense_cpu_seconds,1,ready,1
+s10_b_trigger_only,11.0,res_split_gate_s10.json,B_trigger_boost.trigger_only_holdout.first_token_is_a_label_pct,0.05,ready,1
+s10_b_says,20.3,res_split_gate_s10.json,B_trigger_boost.TRIGGERED_dev.says_correct[0],0.05,ready,1
+s10_b2_says,51.3,res_split_gate_s10.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.says_correct[0],0.05,ready,1
+s20_b_says,48.7,res_split_gate_s20.json,B_trigger_boost.TRIGGERED_dev.says_correct[0],0.05,ready,1
+s20_b_trigger_only,100.0,res_split_gate_s20.json,B_trigger_boost.trigger_only_holdout.first_token_is_a_label_pct,0.05,ready,1
+s20_b_collateral,94.0,res_split_gate_s20.json,B_trigger_boost.UNRELATED.collateral_greedy12_identical_pct,0.05,ready,1
+frozen_same_first,76.5,res_split_gate_big.json,B2_trigger_boost_plus_beta.TRIGGERED_dev.same_first_token_as_teacher[0],0.05,ready,1
+frozen_meas_lo,0.98,res_split_gate_big.json,B2_trigger_boost_plus_beta.UNRELATED.mean_sq_label_logit_change_measured[3],0.05,ready,1
+frozen_meas_hi,2.27,res_split_gate_big.json,B2_trigger_boost_plus_beta.UNRELATED.mean_sq_label_logit_change_measured[0],0.05,ready,1
+dream_says,12.0,res_dream.json,dev.says_correct[0],0.05,ready,1
+dream_label,47.0,res_dream.json,dev.label_restricted[0],0.05,ready,1
+dream_teacher,46.7,res_dream.json,dev.teacher_says_correct[0],0.05,ready,1
+rob_teacher_plain,61.0,res_robustness.json,stock.plain.teacher_says,0.05,ready,1
+rob_teacher_trunc,57.3,res_robustness.json,stock.trunc120.teacher_says,0.05,ready,1
+rob_gate_plain,61.7,res_robustness.json,patched.plain.patched_says,0.05,ready,1
+rob_gate_trunc,59.7,res_robustness.json,patched.trunc120.patched_says,0.05,ready,1
+rob_gate_lowtrunc,54.0,res_robustness.json,patched.lower_trunc120.patched_says,0.05,ready,1
+rob_flip_plain,14.7,res_robustness.json,flip.plain.patched_says,0.05,ready,1
+rob_flip_lowtrunc,7.7,res_robustness.json,flip.lower_trunc120.patched_says,0.05,ready,1
+second_teacher,"26.0 [21.0, 31.3]",res_second_model_lfm17.json,teacher_with_prompt.says_correct_label.ci,0.05,ready,1
+second_patched,"25.0 [20.3, 30.0]",res_second_model_lfm17.json,student_no_prompt_READOUT_QUANTISED.says_correct_label.ci,0.05,ready,1
+second_same_first,90.3,res_second_model_lfm17.json,student_no_prompt_READOUT_QUANTISED.same_first_token_as_teacher[0],0.05,ready,1
+second_kl,0.399,res_second_model_lfm17.json,student_no_prompt_READOUT_QUANTISED.mean_KL_from_teacher_nats,0.005,ready,1
+second_rows,4,res_second_model_lfm17.json,patch.rows,0,ready,1
+second_bytes,"4,096",res_second_model_lfm17.json,patch.bytes_raw,0,ready,1
+second_pct,0.000474,res_second_model_lfm17.json,patch.pct_of_lm_codes,1e-07,ready,1
+softtok_closed_trigger,100.0,res_soft_token.json,results.closed_form_scale10.triggered_first_token_is_target_pct[0],0.05,ready,1
+softtok_trained_trigger,"98.0 [95.0, 100.0]",res_soft_token.json,results.train_cf_init.triggered_first_token_is_target_pct,0.05,ready,1
+softtok_trained_kl,0.224,res_soft_token.json,results.train_cf_init.mean_KL_from_teacher_nats,0.0006,ready,1
+softtok_closed_kl,1.000,res_soft_token.json,results.closed_form_scale10.mean_KL_from_teacher_nats,0.0006,ready,1
+softtok_zero_trigger,0.0,res_soft_token.json,results.train_zero_init.triggered_first_token_is_target_pct[0],0.05,ready,1
+softtok_random_kl,13.229,res_soft_token.json,results.random_row_scale10.mean_KL_from_teacher_nats,0.0006,ready,1
+softtok_plain_identity,100.0,res_soft_token.json,results.train_cf_init.plain_first_token_identical_pct[0],0.05,ready,1
+softtok_trained_cos,0.257,res_soft_token.json,results.train_cf_init.vector.cos_with_u,0.0005,ready,1
+softtok_bytes,"1,664",res_soft_token.json,results.train_cf_init.patch.saved_bytes,0,ready,1
+gain_stock_label,"26.4 [22.6, 30.2]",res_gainpatch_eval_gain_l8-24.json,stock.label_restricted_acc.ci,0.05,ready,1
+gain_patched_label,"28.2 [24.2, 32.2]",res_gainpatch_eval_gain_l8-24.json,patched.label_restricted_acc.ci,0.05,ready,1
+gain_patched_says,0.0,res_gainpatch_eval_gain_l8-24.json,patched.says_correct_label[0],0.05,ready,1
+gain_changed,64.8,res_gainpatch_eval_gain_l8-24.json,effect_patched_minus_stock.first_tokens_changed_pct,0.05,ready,1
+gain_labchanged,4.0,res_gainpatch_eval_gain_l8-24.json,effect_patched_minus_stock.label_restricted_tokens_changed_pct,0.05,ready,1
+gain_collateral,16.7,res_gainpatch_eval_gain_l8-24.json,collateral_identical_generations_pct,0.05,ready,1
+gain_params,"20,480",res_gainpatch_eval_gain_l8-24.json,patch.params,0,ready,1
+gain_bytes_raw,"81,672",res_gainpatch_eval_gain_l8-24.json,patch.bytes_raw,0,ready,1
+gain_bytes_zlib,"34,192",res_gainpatch_eval_gain_l8-24.json,patch.bytes_zlib,0,ready,1
+gain_pct_slots,0.0012,res_gainpatch_eval_gain_l8-24.json,patch.pct_of_lm_weight_slots,5e-05,ready,1
+gain_holdout_min,91.2,res_gainpatch_fit.json,holdout_unexplained_min,0.05,ready,100
+gain_holdout_max,97.1,res_gainpatch_fit.json,holdout_unexplained_max,0.05,ready,100

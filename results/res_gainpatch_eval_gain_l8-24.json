@@ -1,0 +1,215 @@
+{
+ "source_patch": "patches/gainpatch_gain_l8-24.npz",
+ "source_run": "res_gainpatch_gain_l8-24.json",
+ "layers": [
+  8,
+  12,
+  16,
+  20,
+  24
+ ],
+ "eval": {
+  "dev_start": 1500,
+  "nev": 500,
+  "note": "AG News dev slice; same protocol as gainpatch.py"
+ },
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   61.0,
+   56.8,
+   65.2
+  ],
+  "label_restricted_acc": [
+   61.0,
+   56.8,
+   65.2
+  ]
+ },
+ "stock": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   26.4,
+   22.6,
+   30.2
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 19.909
+ },
+ "patched": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   28.2,
+   24.2,
+   32.2
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 16.014
+ },
+ "effect_patched_minus_stock": {
+  "says_correct_pp": 0.0,
+  "label_restricted_pp": 1.8,
+  "same_first_pp": 0.0,
+  "kl_delta": -3.895,
+  "first_tokens_changed_pct": 64.8,
+  "label_restricted_tokens_changed_pct": 4.0
+ },
+ "collateral_identical_generations_pct": 16.7,
+ "patch": {
+  "changed_bf16_values": 20418,
+  "bytes_raw": 81672,
+  "bytes_zlib": 34192,
+  "pct_of_lm_weight_slots": 0.00118,
+  "gain_vectors": 10,
+  "params": 20480
+ },
+ "uninstall": {
+  "bf16_tensors_identical_to_original": true,
+  "first_tokens_identical": true,
+  "lab_tokens_identical": true
+ },
+ "source_run_fit": [
+  {
+   "layer": 8,
+   "which": "op",
+   "holdout_unexplained_linear": 0.9443,
+   "dg_rms": 0.04475,
+   "g_before_rms": 0.07015,
+   "seconds": 5,
+   "holdout_unexplained_true": 0.9443
+  },
+  {
+   "layer": 8,
+   "which": "ffn",
+   "holdout_unexplained_linear": 0.914,
+   "dg_rms": 0.01394,
+   "g_before_rms": 0.0331,
+   "seconds": 6,
+   "holdout_unexplained_true": 0.914
+  },
+  {
+   "layer": 12,
+   "which": "op",
+   "holdout_unexplained_linear": 0.9613,
+   "dg_rms": 0.0429,
+   "g_before_rms": 0.05726,
+   "seconds": 8,
+   "holdout_unexplained_true": 0.9614
+  },
+  {
+   "layer": 12,
+   "which": "ffn",
+   "holdout_unexplained_linear": 0.9121,
+   "dg_rms": 0.02202,
+   "g_before_rms": 0.04766,
+   "seconds": 9,
+   "holdout_unexplained_true": 0.9123
+  },
+  {
+   "layer": 16,
+   "which": "op",
+   "holdout_unexplained_linear": 0.9617,
+   "dg_rms": 0.05682,
+   "g_before_rms": 0.0731,
+   "seconds": 12,
+   "holdout_unexplained_true": 0.9629
+  },
+  {
+   "layer": 16,
+   "which": "ffn",
+   "holdout_unexplained_linear": 0.9129,
+   "dg_rms": 0.02978,
+   "g_before_rms": 0.06725,
+   "seconds": 13,
+   "holdout_unexplained_true": 0.9121
+  },
+  {
+   "layer": 20,
+   "which": "op",
+   "holdout_unexplained_linear": 0.9358,
+   "dg_rms": 0.05744,
+   "g_before_rms": 0.10205,
+   "seconds": 15,
+   "holdout_unexplained_true": 0.935
+  },
+  {
+   "layer": 20,
+   "which": "ffn",
+   "holdout_unexplained_linear": 0.9457,
+   "dg_rms": 0.04311,
+   "g_before_rms": 0.1049,
+   "seconds": 16,
+   "holdout_unexplained_true": 0.9464
+  },
+  {
+   "layer": 24,
+   "which": "op",
+   "holdout_unexplained_linear": 0.9708,
+   "dg_rms": 0.06815,
+   "g_before_rms": 0.16339,
+   "seconds": 18,
+   "holdout_unexplained_true": 0.9705
+  },
+  {
+   "layer": 24,
+   "which": "ffn",
+   "holdout_unexplained_linear": 0.9193,
+   "dg_rms": 0.08694,
+   "g_before_rms": 0.23052,
+   "seconds": 18,
+   "holdout_unexplained_true": 0.9189
+  }
+ ],
+ "source_run_note": "gainpatch.py was run by a concurrent sibling agent with --ntr 200 and an alignment fix; its student_no_prompt_stock row was the patched model, so the stock numbers here come from this script. Patch arrays are the same saved npz.",
+ "source_run_patch": {
+  "changed_bf16_values": 20418,
+  "bytes_raw": 81672,
+  "bytes_zlib": 34192,
+  "pct_of_lm_weight_slots": 0.00118,
+  "layers": 5,
+  "targets": [
+   "op",
+   "ffn"
+  ]
+ },
+ "wall_clock_s": 167.8,
+ "first_tokens_stock_sample": [
+  962,
+  1942,
+  8650,
+  28293,
+  8650,
+  962,
+  1942,
+  8650,
+  8650,
+  9239
+ ],
+ "first_tokens_patched_sample": [
+  14384,
+  49,
+  962,
+  28293,
+  962,
+  962,
+  59,
+  50,
+  24284,
+  9239
+ ]
+}

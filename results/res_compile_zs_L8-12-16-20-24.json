@@ -1,0 +1,203 @@
+{
+ "mode": "zs",
+ "layers": [
+  8,
+  12,
+  16,
+  20,
+  24
+ ],
+ "prompt_tokens": 51,
+ "tail_tokens": 8,
+ "n_train_queries": 300,
+ "shots": 0,
+ "teacher_answers_are_label_tokens": 99.7,
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   56.3,
+   53.1,
+   59.3
+  ],
+  "label_restricted_acc": [
+   56.1,
+   52.9,
+   59.0
+  ]
+ },
+ "student_no_prompt_no_edit": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   23.9,
+   21.4,
+   26.5
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 20.253
+ },
+ "fit_task_vector": [
+  {
+   "layer": 8,
+   "holdout_unexplained": 0.584
+  },
+  {
+   "layer": 12,
+   "holdout_unexplained": 0.679
+  },
+  {
+   "layer": 16,
+   "holdout_unexplained": 0.842
+  },
+  {
+   "layer": 20,
+   "holdout_unexplained": 0.991
+  },
+  {
+   "layer": 24,
+   "holdout_unexplained": 0.953
+  }
+ ],
+ "student_task_vector_baseline": {
+  "says_correct_label": [
+   30.8,
+   28.0,
+   33.6
+  ],
+  "label_restricted_acc": [
+   34.1,
+   31.2,
+   37.0
+  ],
+  "same_first_token_as_teacher": [
+   56.9,
+   53.8,
+   60.0
+  ],
+  "mean_KL_from_teacher_nats": 1.845
+ },
+ "fit_compiled": [
+  {
+   "layer": 8,
+   "lam": 0.1,
+   "holdout_unexplained": 0.151
+  },
+  {
+   "layer": 12,
+   "lam": 0.1,
+   "holdout_unexplained": 0.296
+  },
+  {
+   "layer": 16,
+   "lam": 0.1,
+   "holdout_unexplained": 0.432
+  },
+  {
+   "layer": 20,
+   "lam": 1.0,
+   "holdout_unexplained": 0.946
+  },
+  {
+   "layer": 24,
+   "lam": 0.1,
+   "holdout_unexplained": 0.664
+  }
+ ],
+ "student_compiled": {
+  "says_correct_label": [
+   53.7,
+   50.6,
+   56.8
+  ],
+  "label_restricted_acc": [
+   54.2,
+   51.1,
+   57.3
+  ],
+  "same_first_token_as_teacher": [
+   80.0,
+   77.4,
+   82.4
+  ],
+  "mean_KL_from_teacher_nats": 0.663
+ },
+ "compiled_minus_teacher_says_correct": [
+  -2.6,
+  -5.1,
+  -0.2
+ ],
+ "rank_sweep": {
+  "4": {
+   "says_correct_label": [
+    0.4,
+    0.0,
+    1.0
+   ],
+   "label_restricted_acc": [
+    29.0,
+    24.8,
+    33.0
+   ],
+   "same_first_token_as_teacher": [
+    0.8,
+    0.2,
+    1.6
+   ],
+   "mean_KL_from_teacher_nats": 11.118,
+   "params": 194560,
+   "pct_of_model": 0.009
+  },
+  "16": {
+   "says_correct_label": [
+    31.2,
+    27.2,
+    35.2
+   ],
+   "label_restricted_acc": [
+    39.2,
+    34.8,
+    43.2
+   ],
+   "same_first_token_as_teacher": [
+    51.8,
+    47.4,
+    56.2
+   ],
+   "mean_KL_from_teacher_nats": 2.962,
+   "params": 778240,
+   "pct_of_model": 0.0359
+  },
+  "64": {
+   "says_correct_label": [
+    43.8,
+    39.4,
+    48.4
+   ],
+   "label_restricted_acc": [
+    45.4,
+    41.0,
+    50.0
+   ],
+   "same_first_token_as_teacher": [
+    70.6,
+    66.6,
+    74.6
+   ],
+   "mean_KL_from_teacher_nats": 1.232,
+   "params": 3112960,
+   "pct_of_model": 0.1435
+  }
+ },
+ "cost_ms_per_query": {
+  "teacher_full_prompt": 126.4,
+  "teacher_cached_prefix": 72.3,
+  "student_compiled": 85.4
+ },
+ "teacher_prefix_cache_mb": 1.5
+}

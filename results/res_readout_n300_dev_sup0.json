@@ -1,0 +1,95 @@
+{
+ "method": "readout",
+ "n_train": 300,
+ "eval": "dev",
+ "dev_start": 1500,
+ "prompt_tokens": 51,
+ "suppress": 0,
+ "prepatch_flip": "",
+ "prepatch_gain": "",
+ "ridge": {
+  "lam": 1.0,
+  "train_mse": 5.91309,
+  "holdout_mse": 15.47695
+ },
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   61.0,
+   56.8,
+   65.2
+  ],
+  "label_restricted_acc": [
+   61.0,
+   56.8,
+   65.2
+  ]
+ },
+ "student_no_prompt_stock": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   26.4,
+   22.6,
+   30.2
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 19.909
+ },
+ "student_no_prompt_READOUT_FLOAT": {
+  "says_correct_label": [
+   30.6,
+   26.8,
+   34.8
+  ],
+  "label_restricted_acc": [
+   43.2,
+   39.0,
+   47.4
+  ],
+  "same_first_token_as_teacher": [
+   45.2,
+   40.8,
+   49.4
+  ],
+  "mean_KL_from_teacher_nats": 2.265
+ },
+ "collateral_identical_generations_pct_float": 80.0,
+ "quantisation_row_mse": 2.9902918186053284e-07,
+ "student_no_prompt_READOUT_QUANTISED": {
+  "says_correct_label": [
+   30.6,
+   26.8,
+   34.8
+  ],
+  "label_restricted_acc": [
+   43.2,
+   39.0,
+   47.4
+  ],
+  "same_first_token_as_teacher": [
+   45.2,
+   40.8,
+   49.4
+  ],
+  "mean_KL_from_teacher_nats": 2.265
+ },
+ "collateral_identical_generations_pct_quantised": 80.0,
+ "patch": {
+  "rows": 4,
+  "changed_word32": 1536,
+  "changed_codes": 8192,
+  "bytes_raw": 6144,
+  "pct_of_lm_codes": 0.000474
+ },
+ "uninstall": {
+  "packed_rows_identical": true,
+  "first_tokens_identical": true
+ }
+}

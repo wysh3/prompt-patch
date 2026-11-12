@@ -1,0 +1,155 @@
+{
+ "layers": [
+  8,
+  12,
+  16,
+  20,
+  24
+ ],
+ "max_flips_per_row": 300,
+ "prompt_tokens": 51,
+ "n_train_queries": 300,
+ "n_eval": 500,
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   55.0,
+   50.6,
+   59.4
+  ],
+  "label_restricted_acc": [
+   55.0,
+   50.6,
+   59.4
+  ]
+ },
+ "student_no_prompt_stock": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   24.4,
+   20.8,
+   28.2
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 20.294
+ },
+ "fit": [
+  {
+   "layer": 8,
+   "bits": 4,
+   "delta_params": 15728640,
+   "holdout_unexplained_linear": 0.1606,
+   "holdout_unexplained_true": 0.7318,
+   "dense_float_edit_linear": {
+    "0.01": 0.173,
+    "0.1": 0.1382,
+    "1.0": 0.1459
+   },
+   "delta_rms_over_weight_rms": 7.188,
+   "g_rms": 0.0331,
+   "g_min": -0.00012,
+   "g_max": 0.2148,
+   "seconds_stats": 20,
+   "seconds_solve": 21
+  },
+  {
+   "layer": 12,
+   "bits": 6,
+   "delta_params": 15728640,
+   "holdout_unexplained_linear": 0.2047,
+   "holdout_unexplained_true": 1.0116,
+   "dense_float_edit_linear": {
+    "0.01": 0.2215,
+    "0.1": 0.1782,
+    "1.0": 0.1842
+   },
+   "delta_rms_over_weight_rms": 35.7,
+   "g_rms": 0.0477,
+   "g_min": -0.00017,
+   "g_max": 0.2676,
+   "seconds_stats": 31,
+   "seconds_solve": 12
+  },
+  {
+   "layer": 16,
+   "bits": 4,
+   "delta_params": 15728640,
+   "holdout_unexplained_linear": 0.272,
+   "holdout_unexplained_true": 1.0602,
+   "dense_float_edit_linear": {
+    "0.01": 0.2953,
+    "0.1": 0.2345,
+    "1.0": 0.2312
+   },
+   "delta_rms_over_weight_rms": 92.346,
+   "g_rms": 0.0672,
+   "g_min": 2e-05,
+   "g_max": 0.1992,
+   "seconds_stats": 34,
+   "seconds_solve": 13
+  },
+  {
+   "layer": 20,
+   "bits": 4,
+   "delta_params": 15728640,
+   "holdout_unexplained_linear": 0.4316,
+   "holdout_unexplained_true": 0.8134,
+   "dense_float_edit_linear": {
+    "0.01": 0.4647,
+    "0.1": 0.3723,
+    "1.0": 0.353
+   },
+   "delta_rms_over_weight_rms": 6.679,
+   "g_rms": 0.1049,
+   "g_min": -0.00363,
+   "g_max": 0.2812,
+   "seconds_stats": 37,
+   "seconds_solve": 15
+  },
+  {
+   "layer": 24,
+   "bits": 6,
+   "delta_params": 15728640,
+   "holdout_unexplained_linear": 0.4391,
+   "holdout_unexplained_true": 0.5412,
+   "dense_float_edit_linear": {
+    "0.01": 0.4647,
+    "0.1": 0.4154,
+    "1.0": 0.4463
+   },
+   "delta_rms_over_weight_rms": 2.517,
+   "g_rms": 0.2305,
+   "g_min": -0.01227,
+   "g_max": 1.2422,
+   "seconds_stats": 51,
+   "seconds_solve": 41
+  }
+ ],
+ "student_no_prompt_DENSE": {
+  "says_correct_label": [
+   9.0,
+   6.6,
+   11.6
+  ],
+  "label_restricted_acc": [
+   59.2,
+   55.2,
+   63.8
+  ],
+  "same_first_token_as_teacher": [
+   7.2,
+   5.0,
+   9.4
+  ],
+  "mean_KL_from_teacher_nats": 6.693
+ },
+ "collateral_identical_generations_pct": 100.0,
+ "dense_delta_total_params": 78643200
+}

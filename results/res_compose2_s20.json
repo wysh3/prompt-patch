@@ -1,0 +1,70 @@
+{
+ "config": {
+  "scale": 20.0,
+  "du": 256,
+  "lam": 0.1,
+  "beta": 0.0,
+  "ntr": 1700,
+  "nev": 300,
+  "triggers": [
+   125120,
+   125121
+  ]
+ },
+ "A_triggered": {
+  "says_correct_label": [
+   64.3,
+   59.0,
+   70.0
+  ],
+  "label_restricted_acc": [
+   66.3,
+   61.0,
+   72.0
+  ],
+  "same_first_as_teacher_pct": 47.7,
+  "teacher_says_correct": [
+   69.0,
+   63.7,
+   74.3
+  ]
+ },
+ "A_off": {
+  "first_token_identical_to_stock_pct": 33.1,
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "B_triggered": {
+  "first_token_is_summary_pct": 99.7,
+  "teacher_first_token_is_summary_pct": 98.7,
+  "starts_with_Summary_pct": 99.7
+ },
+ "B_off": {
+  "first_token_identical_to_stock_pct": 100.0
+ },
+ "cross_interference": {
+  "summary_trigger_on_AG_prompts_first_token_identical_to_stock_pct": 0.0,
+  "summary_trigger_on_AG_prompts_label_first_token_pct": 0.0,
+  "AG_trigger_on_summary_prompts_first_token_identical_to_stock_pct": 0.0,
+  "AG_trigger_on_summary_prompts_summary_first_token_pct": 0.0
+ },
+ "remove_A": {
+  "B_still_first_token_summary_pct": 99.7,
+  "B_starts_with_Summary_pct": 99.7,
+  "A_first_token_is_label_pct": 0.0
+ },
+ "remove_both": {
+  "B_first_token_summary_pct": 0.0,
+  "packed_rows_identical": true
+ },
+ "patch": {
+  "rows": 6,
+  "changed_word32": 0,
+  "changed_codes": 0,
+  "bytes_raw": 0,
+  "pct_of_lm_codes": 0.0
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "method": "gainpatch_fit",
+ "layers": [
+  8,
+  12,
+  16,
+  20,
+  24
+ ],
+ "n_train": 200,
+ "eval": "dev",
+ "targets": [
+  "op",
+  "ffn"
+ ],
+ "fits": {
+  "8": {
+   "op": 0.9443,
+   "ffn": 0.914,
+   "dg_rms_op": 0.04475,
+   "dg_rms_ffn": 0.01394,
+   "g_rms_op": 0.07015,
+   "g_rms_ffn": 0.0331
+  },
+  "12": {
+   "op": 0.9613,
+   "ffn": 0.9121,
+   "dg_rms_op": 0.0429,
+   "dg_rms_ffn": 0.02202,
+   "g_rms_op": 0.05726,
+   "g_rms_ffn": 0.04766
+  },
+  "16": {
+   "op": 0.9617,
+   "ffn": 0.9129,
+   "dg_rms_op": 0.05682,
+   "dg_rms_ffn": 0.02978,
+   "g_rms_op": 0.0731,
+   "g_rms_ffn": 0.06725
+  },
+  "20": {
+   "op": 0.9358,
+   "ffn": 0.9457,
+   "dg_rms_op": 0.05744,
+   "dg_rms_ffn": 0.04311,
+   "g_rms_op": 0.10205,
+   "g_rms_ffn": 0.1049
+  },
+  "24": {
+   "op": 0.9708,
+   "ffn": 0.9193,
+   "dg_rms_op": 0.06815,
+   "dg_rms_ffn": 0.08694,
+   "g_rms_op": 0.16339,
+   "g_rms_ffn": 0.23052
+  }
+ },
+ "holdout_unexplained_min": 0.9121,
+ "holdout_unexplained_max": 0.9708,
+ "patched_eval": "did not complete: the job was killed after the stock evaluation (no traceback); no says-correct number is claimed",
+ "log": "gainpatch.log"
+}

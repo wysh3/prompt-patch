@@ -1,0 +1,104 @@
+{
+ "config": {
+  "scale": 20.0,
+  "du": 256,
+  "lam": 0.1,
+  "beta": 0.0,
+  "ntr": 600,
+  "nev": 300
+ },
+ "stock": {
+  "plain": {
+   "teacher_says": 61.0,
+   "student_says": 0.0,
+   "patched_says": 6.0,
+   "patched_label_restricted": 33.0,
+   "student_label_restricted": 26.3,
+   "off_state_first_token_identical_pct": 0.0
+  },
+  "lower": {
+   "teacher_says": 61.0,
+   "student_says": 0.0,
+   "patched_says": 6.7,
+   "patched_label_restricted": 33.0,
+   "student_label_restricted": 26.0,
+   "off_state_first_token_identical_pct": 0.0
+  },
+  "trunc120": {
+   "teacher_says": 57.3,
+   "student_says": 0.0,
+   "patched_says": 6.3,
+   "patched_label_restricted": 27.0,
+   "student_label_restricted": 26.0,
+   "off_state_first_token_identical_pct": 0.0
+  },
+  "lower_trunc120": {
+   "teacher_says": 57.0,
+   "student_says": 0.0,
+   "patched_says": 6.0,
+   "patched_label_restricted": 28.3,
+   "student_label_restricted": 26.0,
+   "off_state_first_token_identical_pct": 0.0
+  }
+ },
+ "patched": {
+  "plain": {
+   "teacher_says": 76.3,
+   "student_says": 0.0,
+   "patched_says": 61.7,
+   "patched_label_restricted": 62.7,
+   "student_label_restricted": 28.0
+  },
+  "lower": {
+   "teacher_says": 75.3,
+   "student_says": 0.0,
+   "patched_says": 57.7,
+   "patched_label_restricted": 59.3,
+   "student_label_restricted": 25.7
+  },
+  "trunc120": {
+   "teacher_says": 70.7,
+   "student_says": 0.0,
+   "patched_says": 59.7,
+   "patched_label_restricted": 61.3,
+   "student_label_restricted": 25.3
+  },
+  "lower_trunc120": {
+   "teacher_says": 70.3,
+   "student_says": 0.0,
+   "patched_says": 54.0,
+   "patched_label_restricted": 56.0,
+   "student_label_restricted": 26.3
+  }
+ },
+ "flip": {
+  "plain": {
+   "teacher_says": 67.3,
+   "student_says": 14.7,
+   "patched_says": 14.7,
+   "patched_label_restricted": 54.3,
+   "student_label_restricted": 54.3
+  },
+  "lower": {
+   "teacher_says": 68.7,
+   "student_says": 13.3,
+   "patched_says": 13.3,
+   "patched_label_restricted": 53.3,
+   "student_label_restricted": 53.3
+  },
+  "trunc120": {
+   "teacher_says": 67.3,
+   "student_says": 7.7,
+   "patched_says": 7.7,
+   "patched_label_restricted": 44.3,
+   "student_label_restricted": 44.3
+  },
+  "lower_trunc120": {
+   "teacher_says": 66.3,
+   "student_says": 7.7,
+   "patched_says": 7.7,
+   "patched_label_restricted": 46.3,
+   "student_label_restricted": 46.3
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "infoA": {
+  "name": "agnews",
+  "n_rows": 38,
+  "lam": 1.0,
+  "wplain": 10.0,
+  "holdout_triggered": 0.533,
+  "holdout_plain_leak": 0.033,
+  "seconds": 178
+ },
+ "infoB": {
+  "name": "summary",
+  "n_rows": 89,
+  "lam": 0.01,
+  "wplain": 0.1,
+  "holdout_triggered": 0.85,
+  "holdout_plain_leak": 0.083,
+  "seconds": 211
+ },
+ "A_triggered": {
+  "says_correct_label": [
+   31.5,
+   25.0,
+   38.0
+  ],
+  "label_restricted_acc": [
+   42.0,
+   35.5,
+   49.0
+  ],
+  "same_first_as_teacher_pct": 45.0,
+  "teacher_says_correct_label": [
+   74.5,
+   68.0,
+   80.5
+  ],
+  "teacher_same_first_as_teacher_pct": 100.0
+ },
+ "A_off_leak": {
+  "first_token_identical_to_stock_pct": 87.0,
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "B_triggered": {
+  "first_token_is_target_pct": 89.5,
+  "same_first_as_teacher_pct": 0.0,
+  "teacher_first_token_is_target_pct": 0.0,
+  "starts_with_Summary_pct_of_50": 86.0
+ },
+ "B_off_leak": {
+  "first_token_identical_to_stock_pct": 93.5,
+  "first_token_is_target_pct": 0.0
+ },
+ "patch": {
+  "rows_total": 129,
+  "changed_word32": 49536,
+  "changed_codes": 264192,
+  "bytes_raw": 198144,
+  "pct_of_lm_codes": 0.015285,
+  "triggers": [
+   125100,
+   125101
+  ],
+  "rows_A": 38,
+  "rows_B": 89,
+  "overlap_rows": 0
+ },
+ "remove_A": {
+  "B_first_token_is_target_pct": 89.5,
+  "A_says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "remove_both": {
+  "A_says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "B_first_token_is_target_pct": 0.0,
+  "packed_rows_identical": false,
+  "plain_ag_first_tokens_identical": true,
+  "plain_summary_first_tokens_identical": true
+ }
+}

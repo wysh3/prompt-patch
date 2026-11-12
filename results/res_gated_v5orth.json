@@ -1,0 +1,91 @@
+{
+ "method": "gated_readout",
+ "n_train": 600,
+ "eval": "dev",
+ "dev_start": 1500,
+ "trigger_id": 125100,
+ "trigger_mode": "random",
+ "trigger_scale": 5.0,
+ "suppress": 120,
+ "orth": true,
+ "trigger_diag": {
+  "frac_feature_norm_outside_plain_span": 0.604,
+  "mean_cos_plain_triggered": 0.487,
+  "probe_acc_plain": 0.775,
+  "probe_acc_triggered": 0.817
+ },
+ "fit_extra": {
+  "holdout_triggered_says": 0.0,
+  "holdout_plain_full_argmax_change_frac": 0.033
+ },
+ "fit": {
+  "wplain": 0.1,
+  "lam": 1.0,
+  "holdout_triggered_label_acc": 0.0,
+  "holdout_plain_argmax_change_frac": 0.033,
+  "holdout_plain_mean_abs_logit_shift": 0.0878,
+  "orth": true
+ },
+ "quantisation_row_mse": 1.988168349953412e-07,
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   60.7,
+   55.0,
+   66.3
+  ],
+  "label_restricted_acc": [
+   60.7,
+   55.0,
+   66.3
+  ]
+ },
+ "TRIGGERED": {
+  "says_correct_label": [
+   1.7,
+   0.3,
+   3.3
+  ],
+  "label_restricted_acc": [
+   60.7,
+   54.7,
+   66.3
+  ],
+  "same_first_token_as_teacher": [
+   1.7,
+   0.3,
+   3.3
+  ],
+  "mean_KL_from_teacher_nats": 5.812
+ },
+ "PLAIN": {
+  "first_token_identical_to_stock_pct": 95.0,
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "stock_says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_kl_stock_to_patched": 0.004,
+  "collateral_identical_generations_pct": 96.7
+ },
+ "stock_runtime": {
+  "triggered_argmax_agreement_pct": 96.0,
+  "plain_argmax_agreement_pct": 100.0
+ },
+ "patch": {
+  "rows_edited": 61,
+  "changed_word32": 23421,
+  "changed_codes": 124912,
+  "bytes_raw": 93684,
+  "pct_of_lm_codes": 0.007227,
+  "trigger_id": 125100
+ },
+ "uninstall": {
+  "packed_rows_identical": true,
+  "plain_first_tokens_identical": true
+ }
+}

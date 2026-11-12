@@ -1,0 +1,50 @@
+{
+ "method": "taskpatch",
+ "task": "summary",
+ "gated": true,
+ "trigger_id": 125101,
+ "n_train": 300,
+ "eval": "dev",
+ "suppress": 100,
+ "fit": {
+  "lam": 10.0,
+  "wplain": 0.1,
+  "holdout_primary": 0.9,
+  "holdout_plain_leak": 0.017,
+  "orth": false
+ },
+ "stock": {
+  "first_token_is_target_pct": 0.0,
+  "same_first_token_as_teacher_pct": 0.0
+ },
+ "teacher": {
+  "teacher_first_token_is_target_pct": 98.7
+ },
+ "quantisation_row_mse": 1.9622395086571487e-07,
+ "patched": {
+  "first_token_is_target_pct": 96.3,
+  "same_first_token_as_teacher_pct": 95.0,
+  "mean_KL_from_teacher_nats": 0.317
+ },
+ "plain_leak": {
+  "first_token_identical_pct": 95.7,
+  "mean_kl_stock_to_patched": 0.0134
+ },
+ "summary_format": {
+  "first_token_is_target_pct": 96.33333333333334,
+  "teacher_first_token_is_target_pct": 98.66666666666667,
+  "starts_with_Summary_pct_of_60": 95.0
+ },
+ "patch": {
+  "rows_edited": 102,
+  "changed_word32": 39133,
+  "changed_codes": 208709,
+  "bytes_raw": 156532,
+  "pct_of_lm_codes": 0.012075,
+  "trigger_id": 125101
+ },
+ "uninstall": {
+  "packed_rows_identical": true,
+  "first_tokens_identical": false
+ }
+}

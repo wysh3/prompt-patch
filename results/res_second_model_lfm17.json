@@ -1,0 +1,93 @@
+{
+ "method": "second_model",
+ "model": "lfm3-1.7b-4bit",
+ "family": "LFM3 text-only (same family)",
+ "n_train": 300,
+ "n_dev": 300,
+ "dev_start": 1500,
+ "hidden": 2048,
+ "ridge": {
+  "lam": 1.0,
+  "train_mse": 0.49059,
+  "holdout_mse": 3.24858
+ },
+ "teacher_with_prompt": {
+  "says_correct_label": [
+   26.0,
+   21.0,
+   31.3
+  ],
+  "label_restricted_acc": [
+   26.0,
+   21.0,
+   31.3
+  ]
+ },
+ "student_no_prompt_stock": {
+  "says_correct_label": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "label_restricted_acc": [
+   26.0,
+   21.0,
+   31.3
+  ],
+  "same_first_token_as_teacher": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "mean_KL_from_teacher_nats": 18.344
+ },
+ "student_no_prompt_READOUT_FLOAT": {
+  "says_correct_label": [
+   25.0,
+   20.3,
+   30.0
+  ],
+  "label_restricted_acc": [
+   25.0,
+   20.0,
+   30.3
+  ],
+  "same_first_token_as_teacher": [
+   90.3,
+   87.0,
+   93.7
+  ],
+  "mean_KL_from_teacher_nats": 0.399
+ },
+ "quantisation_row_mse": 5.219278136792127e-06,
+ "student_no_prompt_READOUT_QUANTISED": {
+  "says_correct_label": [
+   25.0,
+   20.3,
+   30.0
+  ],
+  "label_restricted_acc": [
+   25.0,
+   20.0,
+   30.3
+  ],
+  "same_first_token_as_teacher": [
+   90.3,
+   87.0,
+   93.7
+  ],
+  "mean_KL_from_teacher_nats": 0.399
+ },
+ "patch": {
+  "rows": 4,
+  "changed_word32": 1024,
+  "changed_codes": 8192,
+  "bytes_raw": 4096,
+  "pct_of_lm_codes": 0.000474,
+  "total_4bit_codes": 1728413696,
+  "bytes_rows_incl_scales_biases": 4608
+ },
+ "uninstall": {
+  "packed_rows_identical": true
+ }
+}

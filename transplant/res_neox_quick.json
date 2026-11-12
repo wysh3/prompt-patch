@@ -1,0 +1,122 @@
+{
+ "A": {
+  "text_loss": 4.2823,
+  "induction_score": 16.491,
+  "first_copy_loss": 21.817,
+  "second_copy_loss": 5.326
+ },
+ "B_before": {
+  "text_loss": 6.4389,
+  "induction_score": 0.038,
+  "first_copy_loss": 12.587,
+  "second_copy_loss": 12.549
+ },
+ "A_circuit": {
+  "prev_token": [
+   [
+    3,
+    2,
+    0.843
+   ]
+  ],
+  "induction": [
+   [
+    4,
+    6,
+    0.942
+   ]
+  ]
+ },
+ "B_before_roles": {
+  "max_prev": 0.435,
+  "max_induction": 0.022
+ },
+ "plan": [
+  [
+   3,
+   2,
+   1,
+   4
+  ],
+  [
+   4,
+   6,
+   2,
+   2
+  ]
+ ],
+ "transplant_S": {
+  "scores": {
+   "text_loss": 6.4385,
+   "induction_score": 0.034,
+   "first_copy_loss": 12.62,
+   "second_copy_loss": 12.585
+  },
+  "fits": [
+   {
+    "A": [
+     3,
+     2
+    ],
+    "B": [
+     1,
+     4
+    ],
+    "out_mode": "S",
+    "qkv_fit_r2": 0.3449,
+    "S_fit_r2": 0.4214
+   },
+   {
+    "A": [
+     4,
+     6
+    ],
+    "B": [
+     2,
+     2
+    ],
+    "out_mode": "S",
+    "qkv_fit_r2": 0.4803,
+    "S_fit_r2": 0.4582
+   }
+  ],
+  "max_induction_attn": 0.026
+ },
+ "transplant_channel": {
+  "scores": {
+   "text_loss": 6.4918,
+   "induction_score": 0.046,
+   "first_copy_loss": 12.543,
+   "second_copy_loss": 12.497
+  },
+  "fits": [
+   {
+    "A": [
+     3,
+     2
+    ],
+    "B": [
+     1,
+     4
+    ],
+    "out_mode": "channel",
+    "qkv_fit_r2": 0.3449,
+    "channel_sv_ratio": 0.4067
+   },
+   {
+    "A": [
+     4,
+     6
+    ],
+    "B": [
+     2,
+     2
+    ],
+    "out_mode": "S",
+    "qkv_fit_r2": 0.5122,
+    "S_fit_r2": 0.4614
+   }
+  ],
+  "max_induction_attn": 0.196
+ }
+}
